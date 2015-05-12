@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.tekinarslan.material.sample.fragment.SampleFragment;
+import com.tekinarslan.material.sample.fragment.SwipRefreshFragment;
+import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
@@ -21,9 +23,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             // Open FragmentTab1.java
             case 0:
-                return SampleFragment.newInstance(position);
+                return SwipRefreshFragment.newInstance(position);
             case 1:
-                return SampleFragment.newInstance(position);
+                return SwipRefreshLoadFragment.newInstance(position);
             case 2:
                 return SampleFragment.newInstance(position);
             case 3:
