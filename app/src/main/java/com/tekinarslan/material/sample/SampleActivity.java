@@ -15,7 +15,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
+/**
+ * ึ๗าณ
+ */
 public class SampleActivity extends ActionBarActivity {
 
     private DrawerLayout mDrawerLayout;
