@@ -43,7 +43,7 @@ public class SwipRefreshLoadFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         position = getArguments().getInt(ARG_POSITION);
-        View rootView = inflater.inflate(R.layout.fragment_swiperefresh_layout2, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_swiperefresh_load_layout, container, false);
 
 
         setRefreshList(rootView);

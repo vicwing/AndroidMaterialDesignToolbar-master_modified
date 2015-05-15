@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.tekinarslan.material.sample.fragment.SampleFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment;
+import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment2;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
@@ -26,8 +27,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 return SwipRefreshFragment.newInstance(position);
             case 1:
                 return SwipRefreshLoadFragment.newInstance(position);
-            case 2:
-                return SampleFragment.newInstance(position);
+            case 2://第二个自定义上啦加载.
+                return SwipRefreshLoadFragment2.newInstance(position);
             case 3:
                 return SampleFragment.newInstance(position);
             case 4:

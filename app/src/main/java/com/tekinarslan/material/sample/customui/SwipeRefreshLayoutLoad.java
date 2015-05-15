@@ -10,6 +10,9 @@ import android.view.ViewConfiguration;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ListView;
 
+/**
+ * 滑动到底部能自动加载
+ */
 public class SwipeRefreshLayoutLoad extends SwipeRefreshLayout {
 
     private int mTouchSlop;
