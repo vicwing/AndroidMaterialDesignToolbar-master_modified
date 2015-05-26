@@ -27,7 +27,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 return SwipRefreshFragment.newInstance(position);
             case 1:
                 return SwipRefreshLoadFragment.newInstance(position);
-            case 2://第二个自定义上啦加载.
+            case 2://
                 return SwipRefreshLoadFragment2.newInstance(position);
             case 3:
                 return SampleFragment.newInstance(position);

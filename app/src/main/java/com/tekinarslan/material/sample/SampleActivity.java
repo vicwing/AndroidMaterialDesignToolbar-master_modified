@@ -16,7 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 /**
- * Ö÷Ò³
+ *ï¿½ï¿½Ò³
  */
 public class SampleActivity extends ActionBarActivity {
 
