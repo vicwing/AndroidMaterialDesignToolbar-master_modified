@@ -57,6 +57,7 @@ public class SwipRefreshFragment extends Fragment{
                 }, 4000);
             }
         });
+//        pullRefreshLayout.setRefreshing(true);
         return rootView;
     }
 

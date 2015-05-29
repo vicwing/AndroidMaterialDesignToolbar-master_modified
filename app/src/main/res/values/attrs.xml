@@ -7,4 +7,14 @@
         <attr name="fab_colorRipple" format="color" />
         <attr name="fab_shadow" format="boolean" />
     </declare-styleable>
+
+    <!--CustomTitleView-->
+    <attr name="titleText" format="string" />
+    <attr name="titleTextColor" format="color" />
+    <attr name="titleTextSize" format="dimension" />
+    <declare-styleable name="CustomTitleView">
+        <attr name="titleText" />
+        <attr name="titleTextColor" />
+        <attr name="titleTextSize" />
+    </declare-styleable>
 </resources>

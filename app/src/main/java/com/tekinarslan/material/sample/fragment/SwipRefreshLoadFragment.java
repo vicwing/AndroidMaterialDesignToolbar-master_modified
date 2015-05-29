@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +70,7 @@ public class SwipRefreshLoadFragment extends Fragment{
                 R.color.google_red,
                 R.color.google_yellow);
 
-        mSwipeRefreshLayoutLoad.setRefreshing(true);
+//        mSwipeRefreshLayoutLoad.setRefreshing(true);
         mSwipeRefreshLayoutLoad.setOnRefreshListener(new SwipeRefreshLayoutLoad.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -97,6 +98,9 @@ public class SwipRefreshLoadFragment extends Fragment{
                 }, 2000);
             }
         });
+
+        mSwipeRefreshLayoutLoad.setProgressViewOffset(false, 0, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 24, getResources().getDisplayMetrics()));
+        mSwipeRefreshLayoutLoad.setRefreshing(true);
     }
 
 

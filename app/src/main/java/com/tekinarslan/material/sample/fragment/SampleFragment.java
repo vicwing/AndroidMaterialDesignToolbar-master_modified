@@ -43,6 +43,15 @@ public class SampleFragment extends Fragment {
         ProgressBarCircular progressBarCircular = (ProgressBarCircular) rootView.findViewById(R.id.progress);
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fabButton);
         fab.setDrawableIcon(getResources().getDrawable(R.drawable.plus));
+        switchColor(progressBarCircular, fab);
+
+
+        textHtmlDemo(rootView);
+
+        return rootView;
+    }
+    //设置背景颜色
+    private void switchColor(ProgressBarCircular progressBarCircular, FloatingActionButton fab) {
         switch (position) {
             case 0:
                 fab.setBackgroundColor(getResources().getColor(R.color.material_deep_teal_500));
@@ -64,11 +73,6 @@ public class SampleFragment extends Fragment {
 
                 break;
         }
-
-
-        textHtmlDemo(rootView);
-
-        return rootView;
     }
 
     private void textHtmlDemo(View rootView) {
