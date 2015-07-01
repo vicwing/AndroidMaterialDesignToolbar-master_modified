@@ -34,10 +34,20 @@ public class CustomViewFragment extends BaseFragment {
 //       context =  getActivity();
         View customUi = rootView.findViewById(R.id.custom_ui);
 
-        LogUtils.d(TAG,"context=="+context);
         File externalCacheDir = context.getExternalCacheDir();
+        LogUtils.d(TAG, "externalCacheDir==" + externalCacheDir);
 
-        LogUtils.d(TAG,"externalCacheDir==");
+        File fileDir = context.getFilesDir();
+        LogUtils.d(TAG, "filesDir==" + fileDir);
+
+        File ExternalFiles = context.getExternalFilesDir("123");
+//        File[] files = context.getExternalFilesDirs("vvvv");
+//        File[]  files = context.getExternalFilesDirs("vvvv");
+//        for (int i = 0; i < files.length; i++) {
+//            LogUtils.d(TAG, "files==" + files[i].toString());
+//        }
+        LogUtils.d(TAG, "externalCacheDir==" + ExternalFiles);
+//        new String();
         return rootView;
     }
 

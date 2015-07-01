@@ -1,3 +1,4 @@
+package com.tekinarslan.material.sample.customui.slidingtab;
 /*
  * Copyright 2014 Google Inc. All rights reserved.
  *
@@ -14,7 +15,6 @@
  * limitations under the License.
  */
 
-package com.tekinarslan.material.sample;
 
 import android.R;
 import android.content.Context;
@@ -124,7 +124,7 @@ class SlidingTabStrip extends LinearLayout {
             }
 
             mSelectedIndicatorPaint.setColor(color);
-//            LogUtils.d("123","left=="+left+"right=="+right);
+
             canvas.drawRect(left, height - mSelectedIndicatorThickness, right,
                     height, mSelectedIndicatorPaint);
         }

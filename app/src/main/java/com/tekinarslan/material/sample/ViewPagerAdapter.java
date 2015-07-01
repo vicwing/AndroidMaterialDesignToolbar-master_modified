@@ -12,7 +12,7 @@ import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment2;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    final int PAGE_COUNT =8;
+    final int PAGE_COUNT =3;
     private String titles[] ;
 
     public ViewPagerAdapter(FragmentManager fm, String[] titles2) {
@@ -51,7 +51,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return PAGE_COUNT;
+        return titles.length;
     }
 
 }
