@@ -143,5 +143,8 @@ public class CustomTitleView extends View {
 
         mPaint.setColor(mTitleTextColor);
         canvas.drawText(mTitleText, getWidth() / 2 - mBound.width() / 2, getHeight() / 2 + mBound.height() / 2, mPaint);
+
+        mPaint.setColor(Color.BLUE);
+        canvas.drawText(mTitleText, getWidth() / 2 - mBound.width() / 2, getHeight() / 2 + mBound.height() / 2, mPaint);
     }
 }

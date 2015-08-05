@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <com.tekinarslan.material.sample.customui.CustomTitleView
@@ -11,7 +12,32 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:padding="10dp"
-        custom:titleText="曹操"
-        custom:titleTextColor="#ff0000"
+        custom:titleText="曹操麻利麻利哄"
+        custom:titleTextColor="@color/black"
         custom:titleTextSize="40sp" />
+
+    <Button
+        android:id="@+id/go_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go_viewpager"
+        />
+
+
+    <!--<com.tekinarslan.material.sample.customui.LyricView-->
+        <!--android:id="@+id/lyc_ui"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:padding="10dp"-->
+        <!--custom:titleText="歌词歌词歌词歌词歌词"-->
+        <!--custom:titleTextColor="@color/black"-->
+        <!--custom:titleTextSize="40sp" />-->
+    <com.tekinarslan.material.sample.customui.MyTextView
+        android:id="@+id/mytextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="自定义的mytextview控件"/>
+
 </LinearLayout>

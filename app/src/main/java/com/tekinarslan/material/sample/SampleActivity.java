@@ -25,9 +25,9 @@ public class SampleActivity extends ActionBarActivity {
 
     private ListView mDrawerList;
     ViewPager pager;
-//    private String titles[] = new String[]{"写字楼", "二手房", "租房", "新房"
-//            , "Sample Tab 5", "Sample Tab 6", "Sample Tab 7", "Sample Tab 8"};
-    private String titles[] = new String[]{"写字楼", "二手房", "租房", "新房" };
+    private String titles[] = new String[]{"写字楼", "二手房", "租房", "新房"
+            , "Sample Tab 5", "Sample Tab 6", "Sample Tab 7", "Sample Tab 8"};
+//    private String titles[] = new String[]{"写字楼", "二手房", "租房", "新房" ,"new"};
     private Toolbar toolbar;
 
     SlidingTabLayout slidingTabLayout;

@@ -9,6 +9,7 @@ import com.tekinarslan.material.sample.fragment.SampleFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment2;
+import com.tekinarslan.material.sample.fragment_oschina.BlogViewPagerFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
@@ -25,13 +26,13 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             // Open FragmentTab1.java
             case 0:
-                return  CustomViewFragment.newInstance(position);
+                return CustomViewFragment.newInstance(position);
             case 1:
                 return SwipRefreshLoadFragment.newInstance(position);
             case 2://
                 return SwipRefreshLoadFragment2.newInstance(position);
             case 3://自定义控件
-                return CustomViewFragment.newInstance(position);
+                return BlogViewPagerFragment.newInstance(position);
             case 4:
                 return SwipRefreshFragment.newInstance(position);
             case 5:

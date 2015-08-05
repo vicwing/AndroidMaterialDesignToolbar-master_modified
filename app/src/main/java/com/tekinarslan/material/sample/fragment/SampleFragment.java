@@ -12,14 +12,18 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.FloatingActionButton;
 import com.tekinarslan.material.sample.ProgressBarCircular;
 import com.tekinarslan.material.sample.R;
+import com.tekinarslan.material.sample.bean.Person;
 import com.tekinarslan.material.sample.http.URLImageGetter;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SampleFragment extends Fragment {
 
@@ -45,9 +49,8 @@ public class SampleFragment extends Fragment {
         fab.setDrawableIcon(getResources().getDrawable(R.drawable.plus));
         switchColor(progressBarCircular, fab);
 
-
         textHtmlDemo(rootView);
-
+        printLogTest();
         return rootView;
     }
     //设置背景颜色
@@ -203,4 +206,55 @@ public class SampleFragment extends Fragment {
         }
 
     }
+    private void printLogTest(){
+        // 配置日志是否输出(默认true)
+        LogUtils.configAllowLog = false;
+
+        // 配置日志前缀
+        LogUtils.configTagPrefix = "vic-";
+        // 输出字符串
+        LogUtils.d("12345");
+
+    // 输出参数
+        LogUtils.d("12%s3%d45", "a", 0);
+
+    // 输出异常
+        LogUtils.d(new NullPointerException("12345"));
+
+    // 输出对象
+        Person person = new Person();
+        person.setAge(11);
+        person.setName("pengwei");
+        person.setScore(37.5f);
+        LogUtils.d(person);
+
+    // 对象为空
+        LogUtils.d(null);
+
+    // 输出json（json默认debug打印）
+        String json = "{'a':'b','c':{'aa':234,'dd':{'az':12}}}";
+        LogUtils.json(json);
+
+// 打印数据集合
+        List<Person> list1 = new ArrayList<>();
+        for(int i = 0; i < 4; i++){
+            list1.add(person);
+        }
+        LogUtils.d(list1);
+
+// 打印数组
+        double[][] doubles = {{1.2, 1.6, 1.7, 30, 33},
+                {1.2, 1.6, 1.7, 30, 33},
+                {1.2, 1.6, 1.7, 30, 33},
+                {1.2, 1.6, 1.7, 30, 33}};
+        LogUtils.d(doubles);
+
+// 其他用法
+        LogUtils.v("12345");
+        LogUtils.i("12345");
+        LogUtils.w("12345");
+        LogUtils.e("12345");
+        LogUtils.wtf("12345");
+    }
+
 }

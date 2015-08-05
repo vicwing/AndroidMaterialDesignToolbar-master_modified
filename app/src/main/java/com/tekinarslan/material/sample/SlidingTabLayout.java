@@ -228,11 +228,11 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 tabView.setContentDescription(desc);
             }
 
-//            mTabStrip.addView(tabView);
+            mTabStrip.addView(tabView);
             //修改代码
-            int tabWidth = viewWidth / mViewPager.getAdapter().getCount();
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(tabWidth, LayoutParams.MATCH_PARENT);
-            mTabStrip.addView(tabView, params);
+//            int tabWidth = viewWidth / mViewPager.getAdapter().getCount();
+//            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(tabWidth, LayoutParams.MATCH_PARENT);
+//            mTabStrip.addView(tabView, params);
 
             if (i == mViewPager.getCurrentItem()) {
                 tabView.setSelected(true);
