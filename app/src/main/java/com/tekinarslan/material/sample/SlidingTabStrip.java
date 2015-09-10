@@ -56,6 +56,7 @@ class SlidingTabStrip extends LinearLayout {
         super(context, attrs);
         setWillNotDraw(false);
 
+
         final float density = getResources().getDisplayMetrics().density;
 
         TypedValue outValue = new TypedValue();
