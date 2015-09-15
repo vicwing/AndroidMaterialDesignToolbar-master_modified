@@ -5,7 +5,7 @@ import android.text.TextUtils;
 
 import com.tekinarslan.material.sample.common.config.AppConfig;
 
-
+@Deprecated
 public class LogUtils {
 	public static boolean isDebug = AppConfig.isDebug;
 

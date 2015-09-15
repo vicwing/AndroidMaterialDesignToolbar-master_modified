@@ -4,12 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
 
+import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.base.BaseFragment;
-import com.tekinarslan.material.sample.common.utils.LogUtils;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 public class CustomViewFragment extends BaseFragment {
 
@@ -28,27 +32,67 @@ public class CustomViewFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
-        LogUtils.d(TAG,"CustomViewFragment....................");
+        LogUtils.d("CustomViewFragment....................");
         position = getArguments().getInt(ARG_POSITION);
         View rootView = inflater.inflate(R.layout.fragment_customui, container, false);
 //       context =  getActivity();
         View customUi = rootView.findViewById(R.id.custom_ui);
 
         File externalCacheDir = context.getExternalCacheDir();
-        LogUtils.d(TAG, "externalCacheDir==" + externalCacheDir);
+        LogUtils.d( "externalCacheDir==" + externalCacheDir);
 
         File fileDir = context.getFilesDir();
-        LogUtils.d(TAG, "filesDir==" + fileDir);
+        LogUtils.d( "filesDir==" + fileDir);
 
         File ExternalFiles = context.getExternalFilesDir("123");
 //        File[] files = context.getExternalFilesDirs("vvvv");
 //        File[]  files = context.getExternalFilesDirs("vvvv");
 //        for (int i = 0; i < files.length; i++) {
-//            LogUtils.d(TAG, "files==" + files[i].toString());
+//            LogUtils.d( "files==" + files[i].toString());
 //        }
-        LogUtils.d(TAG, "externalCacheDir==" + ExternalFiles);
+        LogUtils.d("externalCacheDir==" + ExternalFiles);
 //        new String();
+        init(rootView);
         return rootView;
     }
+    SeekBar myseekbar;
+    private void init(View rootView) {
+        myseekbar = (SeekBar)rootView.findViewById(R.id.myseekbar);
+        myseekbar.setMax(7000);
+        myseekbar.setProgress(50);
+        myseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                com.apkfuns.logutils.LogUtils.d("progress="+progress);
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+    }
+
+    private String randomText()
+    {
+        Random random = new Random();
+        Set<Integer> set = new HashSet<Integer>();
+        while (set.size() < 4)
+        {
+            int randomInt = random.nextInt(10);
+            set.add(randomInt);
+        }
+        StringBuffer sb = new StringBuffer();
+        for (Integer i : set)
+        {
+            sb.append("" + i);
+        }
+
+        return sb.toString();
+    }
 }

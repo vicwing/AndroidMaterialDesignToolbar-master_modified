@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1"
 
     defaultConfig {
-        applicationId "com.tekinarslan.material.sample"
+        applicationId "com.material.sample"
         minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
@@ -23,4 +23,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:22.0.0'
     //下拉刷新
     compile 'com.baoyz.pullrefreshlayout:library:1.0.1'
+    compile 'com.apkfuns.logutils:library:1.0.6'
 }
