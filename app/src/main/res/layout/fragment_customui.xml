@@ -1,25 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-
-    <com.tekinarslan.material.sample.customui.CustomTitleView
-        android:id="@+id/custom_ui"
-        android:layout_width="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:padding="10dp"
-        custom:titleText="曹操"
-        custom:titleTextColor="#ff0000"
-        custom:titleTextSize="40sp" />
-    <SeekBar
+    <ScrollView
         android:layout_width="match_parent"
-        android:progress="10"
-        android:max="500"
-        android:layout_height="wrap_content"
-        android:id="@+id/myseekbar"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">]
+
+            <com.tekinarslan.material.sample.customui.CustomTitleView
+                android:id="@+id/custom_ui"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                custom:titleText="曹操"
+                custom:titleTextColor="#ff0000"
+                custom:titleTextSize="40sp" />
+
+            <SeekBar
+                android:id="@+id/myseekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="500"
+                android:progress="10" />
+
+            <com.tekinarslan.material.sample.customui.CustomImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                zhy:image="@drawable/ic_launcher"
+                zhy:imageScaleType="center"
+                zhy:titleText="hello andorid ! "
+                zhy:titleTextColor="#ff0000"
+                zhy:titleTextSize="30sp" />
+
+            <com.tekinarslan.material.sample.customui.CustomImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                zhy:image="@drawable/ic_launcher"
+                zhy:imageScaleType="center"
+                zhy:titleText="helloworldwelcome"
+                zhy:titleTextColor="#00ff00"
+                zhy:titleTextSize="20sp" />
+
+            <com.tekinarslan.material.sample.customui.CustomImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                zhy:image="@drawable/meinv"
+                zhy:imageScaleType="center"
+                zhy:titleText="妹子~"
+                zhy:titleTextColor="#ff0000"
+                zhy:titleTextSize="12sp" />
+            <com.tekinarslan.material.sample.customui.CustomImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                zhy:image="@drawable/meinv"
+                zhy:imageScaleType="center"
+                zhy:titleText="妹子~"
+                zhy:titleTextColor="#ff0000"
+                zhy:titleTextSize="12sp" />
+            <com.tekinarslan.material.sample.customui.CustomImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                zhy:image="@drawable/meinv"
+                zhy:imageScaleType="center"
+                zhy:titleText="妹子~"
+                zhy:titleTextColor="#ff0000"
+                zhy:titleTextSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
