@@ -11,9 +11,6 @@ import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.base.BaseFragment;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
 
 public class CustomViewFragment extends BaseFragment {
 
@@ -76,23 +73,7 @@ public class CustomViewFragment extends BaseFragment {
 
             }
         });
+
     }
 
-    private String randomText()
-    {
-        Random random = new Random();
-        Set<Integer> set = new HashSet<Integer>();
-        while (set.size() < 4)
-        {
-            int randomInt = random.nextInt(10);
-            set.add(randomInt);
-        }
-        StringBuffer sb = new StringBuffer();
-        for (Integer i : set)
-        {
-            sb.append("" + i);
-        }
-
-        return sb.toString();
-    }
 }

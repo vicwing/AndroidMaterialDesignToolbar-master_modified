@@ -22,7 +22,7 @@
                 android:layout_centerInParent="true"
                 android:layout_margin="10dp"
                 android:padding="10dp"
-                custom:titleText="曹操"
+                custom:titleText="曹操刘备床前明月光"
                 custom:titleTextColor="#ff0000"
                 custom:titleTextSize="40sp" />
 
@@ -58,8 +58,8 @@
             <com.tekinarslan.material.sample.customui.CustomImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:padding="10dp"
+                android:layout_marginLeft="40dp"
                 zhy:image="@drawable/meinv"
                 zhy:imageScaleType="center"
                 zhy:titleText="妹子~"
@@ -75,7 +75,7 @@
                 zhy:titleText="妹子~"
                 zhy:titleTextColor="#ff0000"
                 zhy:titleTextSize="12sp" />
-            <com.tekinarslan.material.sample.customui.CustomImageView
+            <com.tekinarslan.material.sample.customui.CustomRoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"

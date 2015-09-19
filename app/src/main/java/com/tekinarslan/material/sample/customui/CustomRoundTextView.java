@@ -22,7 +22,7 @@ import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
 
 
-public class CustomImageView extends View{
+public class CustomRoundTextView extends View{
 	/**
 	 * 控件的宽
 	 */
@@ -64,12 +64,12 @@ public class CustomImageView extends View{
 	 */
 	private Rect rect;
 
-	public CustomImageView(Context context, AttributeSet attrs)
+	public CustomRoundTextView(Context context, AttributeSet attrs)
 	{
 		this(context, attrs, 0);
 	}
 
-	public CustomImageView(Context context)
+	public CustomRoundTextView(Context context)
 	{
 		this(context, null);
 	}
@@ -81,7 +81,7 @@ public class CustomImageView extends View{
 	 * @param attrs
 	 * @param defStyle
 	 */
-	public CustomImageView(Context context, AttributeSet attrs, int defStyle)
+	public CustomRoundTextView(Context context, AttributeSet attrs, int defStyle)
 	{
 		super(context, attrs, defStyle);
 
@@ -190,7 +190,7 @@ public class CustomImageView extends View{
 		 */
 		mPaint.setAntiAlias(true);
 		mPaint.setStrokeWidth(6);
-		mPaint.setStyle(Paint.Style.STROKE);
+		mPaint.setStyle(Style.STROKE);
 		mPaint.setColor(Color.CYAN);
 //		canvas.drawRect(0, 0, getMeasuredWidth(), getMeasuredHeight(), mPaint);
 
@@ -237,19 +237,19 @@ public class CustomImageView extends View{
 		//取消使用掉的快
 		rect.bottom -= mTextBound.height();
 
-		if (mImageScale == IMAGE_SCALE_FITXY)//fitXY
-		{
-			canvas.drawBitmap(mImage, null, rect, mPaint);
-		} else
-		{
-			//计算居中的矩形范围
-			rect.left = mWidth / 2 - mImage.getWidth() / 2;
-			rect.right = mWidth / 2 + mImage.getWidth() / 2;
-			rect.top = (mHeight - mTextBound.height()) / 2 - mImage.getHeight() / 2;
-			rect.bottom = (mHeight - mTextBound.height()) / 2 + mImage.getHeight() / 2;
-
-			canvas.drawBitmap(mImage, null, rect, mPaint);
-		}
+//		if (mImageScale == IMAGE_SCALE_FITXY)//fitXY
+//		{
+//			canvas.drawBitmap(mImage, null, rect, mPaint);
+//		} else
+//		{
+//			//计算居中的矩形范围
+//			rect.left = mWidth / 2 - mImage.getWidth() / 2;
+//			rect.right = mWidth / 2 + mImage.getWidth() / 2;
+//			rect.top = (mHeight - mTextBound.height()) / 2 - mImage.getHeight() / 2;
+//			rect.bottom = (mHeight - mTextBound.height()) / 2 + mImage.getHeight() / 2;
+//
+//			canvas.drawBitmap(mImage, null, rect, mPaint);
+//		}
 
 	}
 
