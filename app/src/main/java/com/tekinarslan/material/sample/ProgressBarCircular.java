@@ -13,6 +13,9 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.RelativeLayout;
 
+/**
+ * 圆环textview
+ */
 public class ProgressBarCircular extends RelativeLayout {
 
 

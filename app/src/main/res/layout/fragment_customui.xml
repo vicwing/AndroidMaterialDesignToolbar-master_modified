@@ -13,7 +13,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">]
+            android:orientation="vertical">
+            <com.tekinarslan.material.sample.customui.CustomProgressBar
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                zhy:circleWidth="15dp"
+                zhy:firstColor="#D4F668"
+                zhy:secondColor="#2F9DD2"
+                zhy:speed="10" />
 
             <com.tekinarslan.material.sample.customui.CustomTitleView
                 android:id="@+id/custom_ui"
@@ -58,23 +69,15 @@
             <com.tekinarslan.material.sample.customui.CustomImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_marginLeft="40dp"
-                zhy:image="@drawable/meinv"
-                zhy:imageScaleType="center"
-                zhy:titleText="妹子~"
-                zhy:titleTextColor="#ff0000"
-                zhy:titleTextSize="12sp" />
-            <com.tekinarslan.material.sample.customui.CustomImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:padding="10dp"
                 zhy:image="@drawable/meinv"
                 zhy:imageScaleType="center"
                 zhy:titleText="妹子~"
                 zhy:titleTextColor="#ff0000"
                 zhy:titleTextSize="12sp" />
+
+
             <com.tekinarslan.material.sample.customui.CustomRoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

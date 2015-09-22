@@ -13,6 +13,7 @@ import android.view.View;
 import com.tekinarslan.material.sample.R;
 
 /**
+ * 圆环旋转
  * Created by cdj on 2015/9/19.
  */
 public class CustomProgressBar extends View{

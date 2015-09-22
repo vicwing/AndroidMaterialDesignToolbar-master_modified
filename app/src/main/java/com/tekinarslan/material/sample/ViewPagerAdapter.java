@@ -5,9 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.tekinarslan.material.sample.fragment.CustomViewFragment;
+import com.tekinarslan.material.sample.fragment.CustomViewFragment1;
 import com.tekinarslan.material.sample.fragment.SampleFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshFragment;
-import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment2;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -27,7 +27,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return  CustomViewFragment.newInstance(position);
             case 1:
-                return SwipRefreshLoadFragment.newInstance(position);
+                return  CustomViewFragment1.newInstance(position);
             case 2://
                 return SwipRefreshLoadFragment2.newInstance(position);
             case 3://自定义控件

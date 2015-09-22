@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#55ffffff"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <com.tekinarslan.material.sample.customui.CustomVolumControlBar1
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        zhy:bg="@drawable/meinv"
+        zhy:circleWidth="12dp"
+        zhy:dotCount="10"
+        zhy:firstColor="#252420"
+        zhy:secondColor="#FDFDFD"
+        zhy:splitSize="25" />
+
+    <com.tekinarslan.material.sample.customui.CustomVolumControlBar
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        zhy:bg="@drawable/ic_launcher"
+        zhy:circleWidth="10dp"
+        zhy:dotCount="10"
+        zhy:firstColor="#00ff00"
+        zhy:secondColor="#ff0000"
+        zhy:splitSize="15" />
+
+    <com.tekinarslan.material.sample.customui.CustomVolumControlBar
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
+        zhy:bg="@drawable/meinv"
+        zhy:circleWidth="10dp"
+        zhy:dotCount="8"
+        zhy:firstColor="#ADC6E5"
+        zhy:secondColor="#0362DB"
+        zhy:splitSize="25" />
+
+</LinearLayout>

@@ -174,7 +174,7 @@ public class CustomTitleView extends View {
         canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));
         canvas.drawRoundRect(r2, 50, 50, mPaint);
 
-        //回话字
+        //绘字
         mPaint.setColor(mTitleTextColor);
         canvas.drawText(mTitleText, getWidth() / 2 - mBound.width() / 2, getHeight() / 2 + mBound.height() / 2, mPaint);
 
