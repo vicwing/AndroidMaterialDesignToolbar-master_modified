@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -113,13 +114,14 @@ public class CustomVolumControlBar1 extends View
 			@Override
 			public void run() {
 				while (true){
-					LogUtils.d("invalidtae");
-					postInvalidate();
+					progress++;
+						postInvalidate();
+					SystemClock.sleep(200);
 				}
 			}
-		});
+		}).start();
 	}
-
+int progress = 0;
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
@@ -185,16 +187,22 @@ public class CustomVolumControlBar1 extends View
 		LogUtils.d("radius=" + radius + " center=" + centre + "(itemSize + mSplitSize)=" + (itemSize + mSplitSize) + " itemSize=" + itemSize);
 		mPaint.setColor(mFirstColor); // 设置圆环的颜色
 //		canvas.drawArc(oval, 0 * (itemSize + mSplitSize), itemSize, false, mPaint); // 根据进度画圆弧
-		for (int i = 0; i < mCount; i++)
-		{
-			canvas.drawArc(oval, i * (itemSize + mSplitSize), itemSize, false, mPaint); // 根据进度画圆弧
-		}
-
-//		mPaint.setColor(mSecondColor); // 设置圆环的颜色
-//		for (int i = 0; i < mCurrentCount; i++)
+//		for (int i = 0; i < mCount; i++)
 //		{
 //			canvas.drawArc(oval, i * (itemSize + mSplitSize), itemSize, false, mPaint); // 根据进度画圆弧
 //		}
+		canvas.drawArc(oval, progress * (itemSize + mSplitSize), itemSize, false, mPaint); // 根据进度画圆弧
+		mPaint.setColor(mSecondColor); // 设置圆环的颜色
+		int currentNum = progress%mCount;
+		LogUtils.d("progress="+progress+"  currentNum="+currentNum+" mcount="+mCount);
+		for (int i = 0; i < mCount; i++)
+		{
+			if (currentNum==i){
+				continue;
+			}
+			canvas.drawArc(oval, i * (itemSize + mSplitSize), itemSize, false, mPaint); // 根据进度画圆弧
+		}
+		LogUtils.d("mCurrentCount="+mCurrentCount);
 	}
 
 	/**
