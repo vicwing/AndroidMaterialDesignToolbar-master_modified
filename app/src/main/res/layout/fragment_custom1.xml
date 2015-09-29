@@ -5,17 +5,54 @@
     android:layout_height="match_parent"
     android:background="#55ffffff"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <com.tekinarslan.material.sample.customui.XferModeDemo.WavePorterDuffXfermodeView
+                android:layout_width="173dp"
+                android:layout_height="173dp"
+                android:layout_gravity="center_horizontal" />
 
+            <com.tekinarslan.material.sample.customui.XferModeDemo.DynamicWaveView
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
+
+            <com.tekinarslan.material.sample.customui.XferModeDemo.AvoidXfermodeView
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+            <com.tekinarslan.material.sample.customui.XCRoundImageViewByXfermode
+                android:id="@+id/cicleImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/meinv2" />
+
+            <com.tekinarslan.material.sample.customui.XCRoundImageViewByXfermode
+                android:id="@+id/roundRectImageView"
+                android:layout_width="125dp"
+                android:layout_height="145dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/meinv" />
+
+            <com.tekinarslan.material.sample.customui.XCRoundImageViewByXfermode
+                android:id="@+id/ovalImageView"
+                android:layout_width="140dp"
+                android:layout_height="184dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/meinv2" />
+
+            <com.tekinarslan.material.sample.customui.CustomCompassView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginBottom="10dp" />
 
             <com.tekinarslan.material.sample.customui.CustomVolumControlBar1
                 android:layout_width="200dp"
@@ -44,18 +81,14 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="bottom"
-                android:layout_marginLeft="10dp"
                 android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
                 zhy:bg="@drawable/meinv"
                 zhy:circleWidth="10dp"
                 zhy:dotCount="8"
                 zhy:firstColor="#ADC6E5"
                 zhy:secondColor="#0362DB"
                 zhy:splitSize="25" />
-            <com.tekinarslan.material.sample.customui.CustomCampusView
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_marginBottom="10dp"/>
         </LinearLayout>
     </ScrollView>
 

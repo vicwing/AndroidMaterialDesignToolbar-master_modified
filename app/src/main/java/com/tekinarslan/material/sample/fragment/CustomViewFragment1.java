@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.base.BaseFragment;
+import com.tekinarslan.material.sample.customui.XCRoundImageViewByXfermode;
 
 public class CustomViewFragment1 extends BaseFragment {
 
@@ -31,7 +32,21 @@ public class CustomViewFragment1 extends BaseFragment {
         init(rootView);
         return rootView;
     }
+
+    private XCRoundImageViewByXfermode circleImageView;//圆形图片
+    private XCRoundImageViewByXfermode roundRectImageView;//圆角矩形图片
+    private XCRoundImageViewByXfermode ovalImageView;//椭圆图片
     private void init(View rootView) {
+        circleImageView = (XCRoundImageViewByXfermode)rootView.findViewById(R.id.cicleImageView);
+        roundRectImageView = (XCRoundImageViewByXfermode)rootView.findViewById(R.id.roundRectImageView);
+        ovalImageView = (XCRoundImageViewByXfermode)rootView.findViewById(R.id.ovalImageView);
+
+        roundRectImageView.setType(XCRoundImageViewByXfermode.TYPE_ROUND);
+        roundRectImageView.setRoundBorderRadius(100);
+
+        ovalImageView.setType(XCRoundImageViewByXfermode.TYPE_OVAL);
+        ovalImageView.setRoundBorderRadius(50);
+
 
     }
 

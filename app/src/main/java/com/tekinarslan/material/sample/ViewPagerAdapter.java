@@ -25,9 +25,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             // Open FragmentTab1.java
             case 0:
-                return  CustomViewFragment.newInstance(position);
-            case 1:
                 return  CustomViewFragment1.newInstance(position);
+            case 1:
+                return  CustomViewFragment.newInstance(position);
             case 2://
                 return SwipRefreshLoadFragment2.newInstance(position);
             case 3://自定义控件
