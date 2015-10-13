@@ -27,4 +27,5 @@ public class BaseFragment  extends Fragment {
         LogUtils.d(TAG,"basefragment....................");
         return super.onCreateView(inflater, container, savedInstanceState);
     }
+
 }

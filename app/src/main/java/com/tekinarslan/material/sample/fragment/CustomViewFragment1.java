@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.base.BaseFragment;
 import com.tekinarslan.material.sample.customui.XCRoundImageViewByXfermode;
@@ -26,7 +25,6 @@ public class CustomViewFragment1 extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
-        LogUtils.d("CustomViewFragment....................");
         position = getArguments().getInt(ARG_POSITION);
         View rootView = inflater.inflate(R.layout.fragment_custom1, container, false);
         init(rootView);

@@ -1,4 +1,3 @@
-
 package com.tekinarslan.material.sample.customui.XferModeDemo;
 
 import android.content.Context;
@@ -14,7 +13,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
 
 
@@ -51,14 +49,13 @@ public class WavePorterDuffXfermodeView extends View {
         new Thread() {
             public void run() {
                 while (true) {
-                    // ²»¶Ï¸Ä±ä»æÖÆµÄ²¨ÀËµÄÎ»ÖÃ
+                    // ä¸æ–­æ”¹å˜ç»˜åˆ¶çš„æ³¢æµªçš„ä½ç½®
                     mCurrentPosition += mSpeed;
-                    LogUtils.d("msrcBitmap.width="+mSrcBitmap.getWidth()+"view.width="+getWidth());
-                    if (mCurrentPosition >= mSrcBitmap.getWidth()-getWidth()) {
+                    if (mCurrentPosition >= mSrcBitmap.getWidth()) {
                         mCurrentPosition = 0;
                     }
                     try {
-                        // ÎªÁË±£Ö¤Ğ§¹ûµÄÍ¬Ê±£¬¾¡¿ÉÄÜ½«cpu¿Õ³öÀ´£¬¹©ÆäËû²¿·ÖÊ¹ÓÃ
+                        // ä¸ºäº†ä¿è¯æ•ˆæœçš„åŒæ—¶ï¼Œå°½å¯èƒ½å°†cpuç©ºå‡ºæ¥ï¼Œä¾›å…¶ä»–éƒ¨åˆ†ä½¿ç”¨
                         Thread.sleep(30);
                     } catch (InterruptedException e) {
                     }
@@ -74,30 +71,30 @@ public class WavePorterDuffXfermodeView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // ´Ócanvas²ãÃæÈ¥³ı¾â³İ
+        // ä»canvaså±‚é¢å»é™¤é”¯é½¿
         canvas.setDrawFilter(mDrawFilter);
         canvas.drawColor(Color.TRANSPARENT);
 
         /*
-         * ½«»æÖÆ²Ù×÷±£´æµ½ĞÂµÄÍ¼²ã
+         * å°†ç»˜åˆ¶æ“ä½œä¿å­˜åˆ°æ–°çš„å›¾å±‚
          */
         int sc = canvas.saveLayer(0, 0, mTotalWidth, mTotalHeight, null, Canvas.ALL_SAVE_FLAG);
 
-        // Éè¶¨Òª»æÖÆµÄ²¨ÎÆ²¿·Ö
+        // è®¾å®šè¦ç»˜åˆ¶çš„æ³¢çº¹éƒ¨åˆ†
         mSrcRect.set(mCurrentPosition, 0, mCurrentPosition + mCenterX, mTotalHeight);
-        // »æÖÆ²¨ÎÆ²¿·Ö
+        // ç»˜åˆ¶æ³¢çº¹éƒ¨åˆ†
         canvas.drawBitmap(mSrcBitmap, mSrcRect, mDestRect, mBitmapPaint);
 
-        // ÉèÖÃÍ¼ÏñµÄ»ìºÏÄ£Ê½
+        // è®¾ç½®å›¾åƒçš„æ··åˆæ¨¡å¼
         mBitmapPaint.setXfermode(mPorterDuffXfermode);
-        // »æÖÆÕÚÕÖÔ²
+        // ç»˜åˆ¶é®ç½©åœ†
         canvas.drawBitmap(mMaskBitmap, mMaskSrcRect, mMaskDestRect,
                 mBitmapPaint);
         mBitmapPaint.setXfermode(null);
         canvas.restoreToCount(sc);
     }
 
-    // ³õÊ¼»¯bitmap
+    // åˆå§‹åŒ–bitmap
     private void initBitmap() {
         mSrcBitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.wave_2000))
                 .getBitmap();
@@ -106,13 +103,13 @@ public class WavePorterDuffXfermodeView extends View {
                 .getBitmap();
     }
 
-    // ³õÊ¼»¯»­±Êpaint
+    // åˆå§‹åŒ–ç”»ç¬”paint
     private void initPaint() {
 
         mBitmapPaint = new Paint();
-        // ·À¶¶¶¯
+        // é˜²æŠ–åŠ¨
         mBitmapPaint.setDither(true);
-        // ¿ªÆôÍ¼Ïñ¹ıÂË
+        // å¼€å¯å›¾åƒè¿‡æ»¤
         mBitmapPaint.setFilterBitmap(true);
 
         mPicPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

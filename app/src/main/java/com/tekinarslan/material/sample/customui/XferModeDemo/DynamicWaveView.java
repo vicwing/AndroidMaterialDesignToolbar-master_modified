@@ -1,5 +1,5 @@
-
 package com.tekinarslan.material.sample.customui.XferModeDemo;
+
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -12,14 +12,14 @@ import android.view.View;
 
 public class DynamicWaveView extends View {
 
-    // ²¨ÎÆÑÕÉ«
+    // æ³¢çº¹é¢œè‰²
     private static final int WAVE_PAINT_COLOR = 0x880000aa;
     // y = Asin(wx+b)+h
     private static final float STRETCH_FACTOR_A = 20;
     private static final int OFFSET_Y = 0;
-    // µÚÒ»ÌõË®²¨ÒÆ¶¯ËÙ¶È
+    // ç¬¬ä¸€æ¡æ°´æ³¢ç§»åŠ¨é€Ÿåº¦
     private static final int TRANSLATE_X_SPEED_ONE = 7;
-    // µÚ¶şÌõË®²¨ÒÆ¶¯ËÙ¶È
+    // ç¬¬äºŒæ¡æ°´æ³¢ç§»åŠ¨é€Ÿåº¦
     private static final int TRANSLATE_X_SPEED_TWO = 5;
     private float mCycleFactorW;
 
@@ -37,17 +37,17 @@ public class DynamicWaveView extends View {
 
     public DynamicWaveView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        // ½«dp×ª»¯Îªpx£¬ÓÃÓÚ¿ØÖÆ²»Í¬·Ö±æÂÊÉÏÒÆ¶¯ËÙ¶È»ù±¾Ò»ÖÂ
+        // å°†dpè½¬åŒ–ä¸ºpxï¼Œç”¨äºæ§åˆ¶ä¸åŒåˆ†è¾¨ç‡ä¸Šç§»åŠ¨é€Ÿåº¦åŸºæœ¬ä¸€è‡´
         mXOffsetSpeedOne = UiUtils.dipToPx(context, TRANSLATE_X_SPEED_ONE);
         mXOffsetSpeedTwo = UiUtils.dipToPx(context, TRANSLATE_X_SPEED_TWO);
 
-        // ³õÊ¼»æÖÆ²¨ÎÆµÄ»­±Ê
+        // åˆå§‹ç»˜åˆ¶æ³¢çº¹çš„ç”»ç¬”
         mWavePaint = new Paint();
-        // È¥³ı»­±Ê¾â³İ
+        // å»é™¤ç”»ç¬”é”¯é½¿
         mWavePaint.setAntiAlias(true);
-        // ÉèÖÃ·ç¸ñÎªÊµÏß
+        // è®¾ç½®é£æ ¼ä¸ºå®çº¿
         mWavePaint.setStyle(Style.FILL);
-        // ÉèÖÃ»­±ÊÑÕÉ«
+        // è®¾ç½®ç”»ç¬”é¢œè‰²
         mWavePaint.setColor(WAVE_PAINT_COLOR);
         mDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
     }
@@ -55,28 +55,28 @@ public class DynamicWaveView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        // ´Ócanvas²ãÃæÈ¥³ı»æÖÆÊ±¾â³İ
+        // ä»canvaså±‚é¢å»é™¤ç»˜åˆ¶æ—¶é”¯é½¿
         canvas.setDrawFilter(mDrawFilter);
         resetPositonY();
         for (int i = 0; i < mTotalWidth; i++) {
 
-            // ¼õ400Ö»ÊÇÎªÁË¿ØÖÆ²¨ÎÆ»æÖÆµÄyµÄÔÚÆÁÄ»µÄÎ»ÖÃ£¬´ó¼Ò¿ÉÒÔ¸Ä³ÉÒ»¸ö±äÁ¿£¬È»ºó¶¯Ì¬¸Ä±äÕâ¸ö±äÁ¿£¬´Ó¶øĞÎ³É²¨ÎÆÉÏÉıÏÂ½µĞ§¹û
-            // »æÖÆµÚÒ»ÌõË®²¨ÎÆ
+            // å‡400åªæ˜¯ä¸ºäº†æ§åˆ¶æ³¢çº¹ç»˜åˆ¶çš„yçš„åœ¨å±å¹•çš„ä½ç½®ï¼Œå¤§å®¶å¯ä»¥æ”¹æˆä¸€ä¸ªå˜é‡ï¼Œç„¶ååŠ¨æ€æ”¹å˜è¿™ä¸ªå˜é‡ï¼Œä»è€Œå½¢æˆæ³¢çº¹ä¸Šå‡ä¸‹é™æ•ˆæœ
+            // ç»˜åˆ¶ç¬¬ä¸€æ¡æ°´æ³¢çº¹
             canvas.drawLine(i, mTotalHeight - mResetOneYPositions[i] - 400, i,
                     mTotalHeight,
                     mWavePaint);
 
-            // »æÖÆµÚ¶şÌõË®²¨ÎÆ
+            // ç»˜åˆ¶ç¬¬äºŒæ¡æ°´æ³¢çº¹
             canvas.drawLine(i, mTotalHeight - mResetTwoYPositions[i] - 400, i,
                     mTotalHeight,
                     mWavePaint);
         }
 
-        // ¸Ä±äÁ½Ìõ²¨ÎÆµÄÒÆ¶¯µã
+        // æ”¹å˜ä¸¤æ¡æ³¢çº¹çš„ç§»åŠ¨ç‚¹
         mXOneOffset += mXOffsetSpeedOne;
         mXTwoOffset += mXOffsetSpeedTwo;
 
-        // Èç¹ûÒÑ¾­ÒÆ¶¯µ½½áÎ²´¦£¬ÔòÖØÍ·¼ÇÂ¼
+        // å¦‚æœå·²ç»ç§»åŠ¨åˆ°ç»“å°¾å¤„ï¼Œåˆ™é‡å¤´è®°å½•
         if (mXOneOffset >= mTotalWidth) {
             mXOneOffset = 0;
         }
@@ -84,14 +84,14 @@ public class DynamicWaveView extends View {
             mXTwoOffset = 0;
         }
 
-        // Òı·¢viewÖØ»æ£¬Ò»°ã¿ÉÒÔ¿¼ÂÇÑÓ³Ù20-30msÖØ»æ£¬¿Õ³öÊ±¼äÆ¬
+        // å¼•å‘viewé‡ç»˜ï¼Œä¸€èˆ¬å¯ä»¥è€ƒè™‘å»¶è¿Ÿ20-30msé‡ç»˜ï¼Œç©ºå‡ºæ—¶é—´ç‰‡
         postInvalidate();
     }
 
     private void resetPositonY() {
-        // mXOneOffset´ú±íµ±Ç°µÚÒ»ÌõË®²¨ÎÆÒªÒÆ¶¯µÄ¾àÀë
+        // mXOneOffsetä»£è¡¨å½“å‰ç¬¬ä¸€æ¡æ°´æ³¢çº¹è¦ç§»åŠ¨çš„è·ç¦»
         int yOneInterval = mYPositions.length - mXOneOffset;
-        // Ê¹ÓÃSystem.arraycopy·½Ê½ÖØĞÂÌî³äµÚÒ»Ìõ²¨ÎÆµÄÊı¾İ
+        // ä½¿ç”¨System.arraycopyæ–¹å¼é‡æ–°å¡«å……ç¬¬ä¸€æ¡æ³¢çº¹çš„æ•°æ®
         System.arraycopy(mYPositions, mXOneOffset, mResetOneYPositions, 0, yOneInterval);
         System.arraycopy(mYPositions, 0, mResetOneYPositions, yOneInterval, mXOneOffset);
 
@@ -104,20 +104,20 @@ public class DynamicWaveView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        // ¼ÇÂ¼ÏÂviewµÄ¿í¸ß
+        // è®°å½•ä¸‹viewçš„å®½é«˜
         mTotalWidth = w;
         mTotalHeight = h;
-        // ÓÃÓÚ±£´æÔ­Ê¼²¨ÎÆµÄyÖµ
+        // ç”¨äºä¿å­˜åŸå§‹æ³¢çº¹çš„yå€¼
         mYPositions = new float[mTotalWidth];
-        // ÓÃÓÚ±£´æ²¨ÎÆÒ»µÄyÖµ
+        // ç”¨äºä¿å­˜æ³¢çº¹ä¸€çš„yå€¼
         mResetOneYPositions = new float[mTotalWidth];
-        // ÓÃÓÚ±£´æ²¨ÎÆ¶şµÄyÖµ
+        // ç”¨äºä¿å­˜æ³¢çº¹äºŒçš„yå€¼
         mResetTwoYPositions = new float[mTotalWidth];
 
-        // ½«ÖÜÆÚ¶¨Îªview×Ü¿í¶È
+        // å°†å‘¨æœŸå®šä¸ºviewæ€»å®½åº¦
         mCycleFactorW = (float) (2 * Math.PI / mTotalWidth);
 
-        // ¸ù¾İview×Ü¿í¶ÈµÃ³öËùÓĞ¶ÔÓ¦µÄyÖµ
+        // æ ¹æ®viewæ€»å®½åº¦å¾—å‡ºæ‰€æœ‰å¯¹åº”çš„yå€¼
         for (int i = 0; i < mTotalWidth; i++) {
             mYPositions[i] = (float) (STRETCH_FACTOR_A * Math.sin(mCycleFactorW * i) + OFFSET_Y);
         }
