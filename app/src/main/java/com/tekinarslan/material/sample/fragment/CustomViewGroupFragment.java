@@ -27,7 +27,6 @@ public class CustomViewGroupFragment extends BaseFragment {
         position = getArguments().getInt(ARG_POSITION);
         View rootView = inflater.inflate(R.layout.viewgroup_container, container, false);
 //        switchColor(progressBarCircular, fab);
-
         return rootView;
     }
 }

@@ -30,8 +30,8 @@ public class CustomImgContainer extends ViewGroup
 	 * 计算所有ChildView的宽度和高度 然后根据ChildView的计算结果，设置自己的宽和高
 	 */
 	@Override
-	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
-	{
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
+//		Math.min()
 		/**
 		 * 获得此ViewGroup上级容器为其推荐的宽和高，以及计算模式
 		 */
@@ -184,22 +184,4 @@ public class CustomImgContainer extends ViewGroup
 		return new MarginLayoutParams(p);
 	}
 
-	/*
-	 * if (heightMode == MeasureSpec.UNSPECIFIED)
-		{
-			int tmpHeight = 0 ;
-			LayoutParams lp = getLayoutParams();
-			if (lp.height == LayoutParams.MATCH_PARENT)
-			{
-				Rect outRect = new Rect();
-				getWindowVisibleDisplayFrame(outRect);
-				tmpHeight = outRect.height();
-			}else
-			{
-				tmpHeight = getLayoutParams().height ; 
-			}
-			height = Math.max(height, tmpHeight);
-
-		}
-	 */
 }
