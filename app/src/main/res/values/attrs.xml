@@ -17,6 +17,12 @@
         <attr name="titleTextColor" />
         <attr name="titleTextSize" />
     </declare-styleable>
+    <!--PagerSlidingTabStrip-->
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="slidingBlock" format="reference|color"/>
+        <attr name="allowWidthFull" format="boolean"/>
+        <attr name="disableViewPager" format="boolean"/>
+    </declare-styleable>
 
     <!--CustomImageView-->
     <attr name="image" format="reference" />

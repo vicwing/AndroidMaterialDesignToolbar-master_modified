@@ -15,6 +15,15 @@
         <item name="color">@android:color/white</item>
     </style>
 
+    <!-- viewpage文本  滑动标签标题 -->
+    <style name="viewpage_slidingTabTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/viewpage_selector_slide_title</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
     <style name="popwindow_delete_btn_anim_style">
         <item name="android:windowEnterAnimation">@anim/delete_btn_show</item>
         <!-- 指定显示的动画xml -->

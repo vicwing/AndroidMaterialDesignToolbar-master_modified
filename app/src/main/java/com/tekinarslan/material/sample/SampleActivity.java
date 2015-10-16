@@ -46,7 +46,6 @@ public class SampleActivity extends ActionBarActivity {
         }
         pager = (ViewPager) findViewById(R.id.viewpager);
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
-        slidingTabLayout.setWidthLocked(false);
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), titles));
 
         slidingTabLayout.setViewPager(pager);

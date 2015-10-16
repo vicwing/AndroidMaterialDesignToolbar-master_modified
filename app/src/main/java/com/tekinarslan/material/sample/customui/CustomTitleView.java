@@ -23,6 +23,7 @@ import java.util.Set;
  * Created by cdj on 2015/5/27.
  */
 public class CustomTitleView extends View {
+    private static final String TAG = CustomTitleView.class.getSimpleName();
     /**
      * 文本
      */
@@ -130,7 +131,6 @@ public class CustomTitleView extends View {
             width = widthSize;
         } else
         {
-            com.apkfuns.logutils.LogUtils.d("width==wrapcontent");
             mPaint.setTextSize(mTitleTextSize);
             mPaint.getTextBounds(mTitleText, 0, mTitleText.length(), mBound);
             float textWidth = mBound.width();
