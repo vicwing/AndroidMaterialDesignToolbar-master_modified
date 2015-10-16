@@ -120,6 +120,7 @@ public class VerticalLinearLayout extends ViewGroup
                 mScrollStart = getScrollY();
                 mLastY = y;
                 break;
+
             case MotionEvent.ACTION_MOVE:
 
                 if (!mScroller.isFinished())
