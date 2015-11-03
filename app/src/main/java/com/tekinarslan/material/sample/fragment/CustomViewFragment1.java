@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tekinarslan.material.sample.R;
-import com.tekinarslan.material.sample.base.BaseFragment;
+import com.tekinarslan.material.sample.base.fragment.BaseFragment;
 import com.tekinarslan.material.sample.customui.XCRoundImageViewByXfermode;
 
 public class CustomViewFragment1 extends BaseFragment {

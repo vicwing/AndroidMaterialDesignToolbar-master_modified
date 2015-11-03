@@ -8,7 +8,7 @@ import android.widget.SeekBar;
 
 import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
-import com.tekinarslan.material.sample.base.BaseFragment;
+import com.tekinarslan.material.sample.base.fragment.BaseFragment;
 
 import java.io.File;
 

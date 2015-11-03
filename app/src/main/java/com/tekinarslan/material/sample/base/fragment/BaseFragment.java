@@ -1,4 +1,4 @@
-package com.tekinarslan.material.sample.base;
+package com.tekinarslan.material.sample.base.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
