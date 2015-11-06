@@ -28,4 +28,5 @@ dependencies {
     compile 'com.android.support:support-v4:22.1.1'
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:gridlayout-v7:22.2.0'
+    compile 'com.apkfuns.logutils:library:1.0.6'
 }
