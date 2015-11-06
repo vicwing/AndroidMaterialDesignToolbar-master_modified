@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    mavenCentral()
+}
 android {
     compileSdkVersion 22
     buildToolsVersion "21.1"
@@ -22,4 +25,17 @@ dependencies {
     //下拉刷新
     compile 'com.baoyz.pullrefreshlayout:library:1.0.1'
     compile 'com.apkfuns.logutils:library:1.0.6'
+
+//    apt "org.androidannotations:androidannotations:$AAVersion"
+//    compile "org.androidannotations:androidannotations-api:$AAVersion"
 }
+
+//apply plugin:'android-apt'
+//def AAVersion='3.3.2'// change this to your desired version, for example the latest stable: 3.2
+//
+//apt{
+//    arguments{
+//        androidManifestFile variant.outputs[0].processResources.manifestFile
+//        resourcePackageName "org.merlin.android_app2"
+//    }
+//}

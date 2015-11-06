@@ -5,12 +5,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.tekinarslan.material.sample.R;
+import com.tekinarslan.material.sample.base.adapter.BaseAdapterHelper;
+import com.tekinarslan.material.sample.base.adapter.QuickAdapter;
 import com.tekinarslan.material.sample.customui.SwipeRefreshLayoutLoad2;
 
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class SwipRefreshLoadFragment2 extends Fragment{
 
         return rootView;
     }
-
+    private BaseAdapter adapter;
     private void setRefreshList(View layoutView) {
 
         // 模拟一些数据
@@ -59,9 +60,15 @@ public class SwipRefreshLoadFragment2 extends Fragment{
         }
 
         // 构造适配器
-        final BaseAdapter adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1,
-                datas);
+//        final BaseAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, datas);
+        adapter = new QuickAdapter<String>(getActivity(), R.layout.listview_item,datas) {
+            @Override
+            protected void convert(BaseAdapterHelper helper, String item) {
+                helper.setText(R.id.id_item_tv, item);
+            }
+        };
+
+
         // 获取listview实例
         ListView listView = (ListView) layoutView.findViewById(R.id.listview);
         listView.setAdapter(adapter);
