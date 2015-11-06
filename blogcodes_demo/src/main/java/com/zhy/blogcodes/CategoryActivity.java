@@ -33,6 +33,7 @@ public class CategoryActivity extends ActionBarActivity
 
     private Class[] CLAZZES = new Class[]
             {
+                    LeftDrawerLayoutActivity.class,
                     NavigationViewActivity.class,
                     NavListViewActivity.class,
                     UserLoginActivity.class,
@@ -44,8 +45,8 @@ public class CategoryActivity extends ActionBarActivity
                     PerformanceMainActivity.class,
                     ToolBarMainActivity.class,
                     //MainTestActivity.class,
-                    Jni01Activity.class,
-                    LeftDrawerLayoutActivity.class
+                    Jni01Activity.class
+
 
             };
 

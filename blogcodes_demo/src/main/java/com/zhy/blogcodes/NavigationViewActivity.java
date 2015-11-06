@@ -11,20 +11,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class NavigationViewActivity extends ActionBarActivity
-{
+public class NavigationViewActivity extends ActionBarActivity {
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
+
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_view);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.id_drawer_layout);
-        mNavigationView = (NavigationView) findViewById(R.id.id_nv_menu);
+        mNavigationView =
+
+
+                (NavigationView) findViewById(R.id.id_nv_menu);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
@@ -39,18 +42,15 @@ public class NavigationViewActivity extends ActionBarActivity
 
     }
 
-    private void setupDrawerContent(NavigationView navigationView)
-    {
+    private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
 
-                new NavigationView.OnNavigationItemSelectedListener()
-                {
+                new NavigationView.OnNavigationItemSelectedListener() {
 
                     private MenuItem mPreMenuItem;
 
                     @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem)
-                    {
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
                         if (mPreMenuItem != null) mPreMenuItem.setChecked(false);
                         menuItem.setChecked(true);
                         mDrawerLayout.closeDrawers();
@@ -61,20 +61,17 @@ public class NavigationViewActivity extends ActionBarActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_navigation_view, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        if(item.getItemId() == android.R.id.home)
-        {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
             mDrawerLayout.openDrawer(GravityCompat.START);
-            return true ;
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -13,7 +13,8 @@ public class LeftDrawerLayoutActivity extends ActionBarActivity
 {
 
     private LeftMenuFragment mMenuFragment;
-    private LeftDrawerLayout mLeftDrawerLayout ;
+//    private LeftDrawerLayout mLeftDrawerLayout ;
+    private MyLeftDrawerLayout mLeftDrawerLayout ;
     private TextView mContentTv ;
 
 
@@ -23,7 +24,8 @@ public class LeftDrawerLayoutActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_left_drawer_layout);
 
-        mLeftDrawerLayout = (LeftDrawerLayout) findViewById(R.id.id_drawerlayout);
+//        mLeftDrawerLayout = (LeftDrawerLayout) findViewById(R.id.id_drawerlayout);
+        mLeftDrawerLayout = (MyLeftDrawerLayout) findViewById(R.id.id_drawerlayout);
         mContentTv = (TextView) findViewById(R.id.id_content_tv);
 
         FragmentManager fm = getSupportFragmentManager();
@@ -44,7 +46,4 @@ public class LeftDrawerLayoutActivity extends ActionBarActivity
         });
 
     }
-
-
-    
 }
