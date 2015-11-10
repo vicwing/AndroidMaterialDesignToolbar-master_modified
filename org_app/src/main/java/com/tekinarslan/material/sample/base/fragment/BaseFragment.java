@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tekinarslan.material.sample.common.utils.LogUtils;
-
 /**
  * Created by cdj on 2015/5/28.
  */
@@ -24,7 +22,6 @@ public class BaseFragment  extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         context = getActivity();
-        LogUtils.d(TAG,"basefragment....................");
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 

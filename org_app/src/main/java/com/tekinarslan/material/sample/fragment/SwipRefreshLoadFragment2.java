@@ -10,8 +10,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.tekinarslan.material.sample.R;
-import com.tekinarslan.material.sample.base.adapter.BaseAdapterHelper;
-import com.tekinarslan.material.sample.base.adapter.QuickAdapter;
+import com.tekinarslan.material.sample.base.adapterhelper.BaseAdapterHelper;
+import com.tekinarslan.material.sample.base.adapterhelper.QuickAdapter;
 import com.tekinarslan.material.sample.customui.SwipeRefreshLayoutLoad2;
 
 import java.util.ArrayList;
