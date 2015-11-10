@@ -1,4 +1,4 @@
-/**
+package com.tekinarslan.material.sample.base.adapterhelper; /**
  * Copyright 2013 Joan Zapata
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,31 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.tekinarslan.material.sample.base.adapter;
 
 import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.List;
 
+import static com.tekinarslan.material.sample.base.adapterhelper.BaseAdapterHelper.get;
+
+
 /**
- * Same as QuickAdapter, but adds an "itemChanged" boolean in the
- * convert() method params, which allows you to know if you are
- * adapting the new view to the same item or not, and therefore
- * make a difference between dataset changed / dataset invalidated.
- * <p/>
  * Abstraction class of a BaseAdapter in which you only need
  * to provide the convert() implementation.<br/>
  * Using the provided BaseAdapterHelper, your code is minimalist.
  * @param <T> The type of the items in the list.
  */
-public abstract class EnhancedQuickAdapter<T> extends QuickAdapter<T> {
+public abstract class QuickAdapter<T> extends BaseQuickAdapter<T, BaseAdapterHelper> {
 
     /**
      * Create a QuickAdapter.
      * @param context     The context.
      * @param layoutResId The layout resource id of each item.
      */
-    public EnhancedQuickAdapter(Context context, int layoutResId) {
+    public QuickAdapter(Context context, int layoutResId) {
         super(context, layoutResId);
     }
 
@@ -48,21 +47,12 @@ public abstract class EnhancedQuickAdapter<T> extends QuickAdapter<T> {
      * @param layoutResId The layout resource id of each item.
      * @param data        A new list is created out of this one to avoid mutable list
      */
-    public EnhancedQuickAdapter(Context context, int layoutResId, List<T> data) {
+    public QuickAdapter(Context context, int layoutResId, List<T> data) {
         super(context, layoutResId, data);
     }
 
-    @Override
-    protected final void convert(BaseAdapterHelper helper, T item) {
-        boolean itemChanged = helper.associatedObject == null || !helper.associatedObject.equals(item);
-        helper.associatedObject = item;
-        convert(helper, item, itemChanged);
+    protected BaseAdapterHelper getAdapterHelper(int position, View convertView, ViewGroup parent) {
+        return get(context, convertView, parent, layoutResId, position);
     }
 
-    /**
-     * @param helper      The helper to use to adapt the view.
-     * @param item        The item you should adapt the view to.
-     * @param itemChanged Whether or not the helper was bound to another object before.
-     */
-    protected abstract void convert(BaseAdapterHelper helper, T item, boolean itemChanged);
 }
