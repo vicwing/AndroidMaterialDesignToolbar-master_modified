@@ -10,6 +10,7 @@ import com.tekinarslan.material.sample.fragment.CustomViewGroupFragment;
 import com.tekinarslan.material.sample.fragment.SampleFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshFragment;
 import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment2;
+import com.tekinarslan.material.sample.fragment.SwipRefreshLoadFragment3;
 import com.tekinarslan.material.sample.fragment.ViewDragHelperFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -39,7 +40,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 5:
                 return CustomViewGroupFragment.newInstance(position);
             case 6:
-                return SampleFragment.newInstance(position);
+                return SwipRefreshLoadFragment3.newInstance(position);
             case 7:
                 return SampleFragment.newInstance(position);
 

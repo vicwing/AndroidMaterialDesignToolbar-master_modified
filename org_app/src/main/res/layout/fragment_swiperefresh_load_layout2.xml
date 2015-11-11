@@ -7,7 +7,7 @@
 
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/listview_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 </com.tekinarslan.material.sample.customui.SwipeRefreshLayoutLoad2>

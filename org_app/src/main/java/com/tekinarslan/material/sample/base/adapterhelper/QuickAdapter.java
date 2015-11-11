@@ -18,6 +18,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.tekinarslan.material.sample.base.adapterhelper.BaseAdapterHelper.get;
@@ -51,8 +52,31 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T, BaseAdapterHel
         super(context, layoutResId, data);
     }
 
+    /**
+     * 多item布局
+     * @param context
+     * @param data
+     * @param multiItemSupport
+     */
+    public QuickAdapter(Context context, ArrayList<T> data,
+                        MultiItemTypeSupport<T> multiItemSupport)
+    {
+        super(context, data, multiItemSupport);
+    }
     protected BaseAdapterHelper getAdapterHelper(int position, View convertView, ViewGroup parent) {
-        return get(context, convertView, parent, layoutResId, position);
+//        return get(context, convertView, parent, layoutResId, position);
+        if (mMultiItemSupport != null)
+        {
+            return get(
+                    context,
+                    convertView,
+                    parent,
+                    mMultiItemSupport.getLayoutId(position, data.get(position)),
+                    position);
+        } else
+        {
+            return get(context, convertView, parent, layoutResId, position);
+        }
     }
 
 }

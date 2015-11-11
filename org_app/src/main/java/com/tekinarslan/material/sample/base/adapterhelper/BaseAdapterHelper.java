@@ -60,12 +60,15 @@ public class BaseAdapterHelper {
 
     private View convertView;
 
+    public int layoutId;
+
     /** Package private field to retain the associated user object and detect a change */
     Object associatedObject;
 
     protected BaseAdapterHelper(Context context, ViewGroup parent, int layoutId, int position) {
         this.context = context;
         this.position = position;
+        this.layoutId = layoutId;
         this.views = new SparseArray<View>();
         convertView = LayoutInflater.from(context) //
                 .inflate(layoutId, parent, false);
@@ -91,6 +94,12 @@ public class BaseAdapterHelper {
 
         // Retrieve the existing helper and update its position
         BaseAdapterHelper existingHelper = (BaseAdapterHelper) convertView.getTag();
+
+        if (existingHelper.layoutId != layoutId)
+        {
+            return new BaseAdapterHelper(context, parent, layoutId, position);
+        }
+
         existingHelper.position = position;
         return existingHelper;
     }

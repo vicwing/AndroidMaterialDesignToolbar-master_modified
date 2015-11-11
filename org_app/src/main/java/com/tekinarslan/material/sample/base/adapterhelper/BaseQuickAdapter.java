@@ -38,7 +38,7 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
 
     protected final Context context;
 
-    protected final int layoutResId;
+    protected  int layoutResId;
 
     protected final List<T> data;
 
@@ -66,6 +66,17 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
         this.layoutResId = layoutResId;
     }
 
+
+    protected MultiItemTypeSupport<T> mMultiItemSupport;
+
+    public BaseQuickAdapter(Context context, ArrayList<T> data,
+                            MultiItemTypeSupport<T> multiItemSupport)
+    {
+        this.mMultiItemSupport = multiItemSupport;
+        this.data = data == null ? new ArrayList<T>() : new ArrayList<T>(data);
+        this.context = context;
+    }
+
     @Override
     public int getCount() {
         int extra = displayIndeterminateProgress ? 1 : 0;
@@ -85,25 +96,47 @@ public abstract class BaseQuickAdapter<T, H extends BaseAdapterHelper> extends B
 
     @Override
     public int getViewTypeCount() {
+        if (mMultiItemSupport != null)
+            return mMultiItemSupport.getViewTypeCount() + 1;
         return 2;
     }
 
     @Override
     public int getItemViewType(int position) {
-        return position >= data.size() ? 1 : 0;
+
+        if (displayIndeterminateProgress)
+        {
+            if (mMultiItemSupport != null)
+                return position >= data.size() ? 0 : mMultiItemSupport
+                        .getItemViewType(position, data.get(position));
+        } else
+        {
+            if (mMultiItemSupport != null)
+                return mMultiItemSupport.getItemViewType(position,
+                        data.get(position));
+        }
+        return position >= data.size() ? 0 : 1;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (getItemViewType(position) == 0) {
-            final H helper = getAdapterHelper(position, convertView, parent);
-            T item = getItem(position);
-            convert(helper, item);
-            helper.setAssociatedObject(item);
-            return helper.getView();
+//        if (getItemViewType(position) == 0) {
+//            final H helper = getAdapterHelper(position, convertView, parent);
+//            T item = getItem(position);
+//            convert(helper, item);
+//            helper.setAssociatedObject(item);
+//            return helper.getView();
+//        }
+//        return createIndeterminateProgressView(convertView, parent);
+        if (getItemViewType(position) == 0)
+        {
+            return createIndeterminateProgressView(convertView, parent);
         }
-
-        return createIndeterminateProgressView(convertView, parent);
+        final H helper = getAdapterHelper(position, convertView, parent);
+        T item = getItem(position);
+        helper.setAssociatedObject(item);
+        convert(helper, item);
+        return helper.getView();
     }
 
     private View createIndeterminateProgressView(View convertView, ViewGroup parent) {
