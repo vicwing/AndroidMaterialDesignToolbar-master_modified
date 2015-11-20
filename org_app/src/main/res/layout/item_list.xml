@@ -12,12 +12,14 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:text="红色钱包"
+        style="@style/MyTextStyle"
         android:textSize="16sp"
         android:textColor="#444444" >
     </TextView>
 
     <TextView
         android:id="@+id/tv_describe"
+        style="@style/MyTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_title"
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_describe"
         android:layout_marginTop="10dp"
+        style="@style/MyTextStyle"
         android:text="20130240122"
         android:textColor="#898989"
         android:textSize="12sp" >
@@ -46,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@id/tv_describe"
+        style="@style/MyTextStyle"
         android:layout_marginTop="10dp"
         android:background="#5cbe6c"
         android:drawableLeft="@drawable/common_signin_btn_icon_normal_dark"

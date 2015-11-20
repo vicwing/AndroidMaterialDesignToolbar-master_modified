@@ -77,7 +77,7 @@ public class CustomTitleView extends View {
                 case R.styleable.CustomTitleView_titleText:
                     mTitleText = a.getString(attr);
                     break;
-                case R.styleable.CustomTitleView_titleTextColor:
+                case R.styleable.CustomTitleView_cus_titleTextColor:
                     // 默认颜色设置为黑色
                     mTitleTextColor = a.getColor(attr, Color.BLACK);
                     break;

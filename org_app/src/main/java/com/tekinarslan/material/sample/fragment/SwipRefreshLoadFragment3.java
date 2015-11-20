@@ -57,6 +57,7 @@ public class SwipRefreshLoadFragment3 extends Fragment {
     private void initListView(View rootView) {
         mListView = (ListView) rootView.findViewById(R.id.listview_lv);
 
+
         MultiItemTypeSupport<ChatMessage> multiItemTypeSupport = new MultiItemTypeSupport<ChatMessage>() {
             @Override
             public int getLayoutId(int position, ChatMessage msg) {

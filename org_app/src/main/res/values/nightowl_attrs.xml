@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NightOwl_TabLayout">
+        <attr name="night_textColorSelector" format="color|reference"/>
+        <attr name="night_tabIndicatorColor" format="color|reference"/>
+    </declare-styleable>
+    <declare-styleable name="NightOwl_Toolbar">
+        <attr name="night_titleTextColor" format="color|reference"/>
+        <attr name="night_popupTheme" format="color|reference"/>
+    </declare-styleable>
+    <declare-styleable name="NightOwl_CollapsingToolbarLayout">
+        <attr name="night_contentScrim" format="color|reference"/>
+    </declare-styleable>
+    <declare-styleable name="NightOwl_CardView">
+        <attr name="night_cardBackgroundColor" format="color"/>
+    </declare-styleable>
+</resources>

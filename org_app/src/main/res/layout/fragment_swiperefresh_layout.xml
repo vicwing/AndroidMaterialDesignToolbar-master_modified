@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:night="http://schemas.android.com/apk/res-auto"
+    night:night_titleTextColor="@color/tablayout_text_color_selected_n"
     android:background="@color/blue">
     <FrameLayout
         android:layout_width="match_parent"

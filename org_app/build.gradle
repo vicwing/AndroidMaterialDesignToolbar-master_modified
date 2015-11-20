@@ -4,7 +4,7 @@ repositories {
     mavenCentral()
 }
 android {
-    compileSdkVersion 22
+    compileSdkVersion 23
     buildToolsVersion "21.1"
 
     defaultConfig {
@@ -18,16 +18,18 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:22.0.0'
-    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile 'com.android.support:support-v4:23.0.0'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    //    compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.google.android.gms:play-services:7.0.0'
-    compile 'com.android.support:recyclerview-v7:22.0.0'
+    compile 'com.android.support:recyclerview-v7:23.0.0'
     //下拉刷新
     compile 'com.baoyz.pullrefreshlayout:library:1.0.1'
     compile 'com.apkfuns.logutils:library:1.0.6'
-
-//    apt "org.androidannotations:androidannotations:$AAVersion"
-//    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile 'com.fasterxml.jackson.core:jackson-core:2.4.5'
+    //    apt "org.androidannotations:androidannotations:$AAVersion"
+    //    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile project(':nightowllib')
 }
 
 //apply plugin:'android-apt'

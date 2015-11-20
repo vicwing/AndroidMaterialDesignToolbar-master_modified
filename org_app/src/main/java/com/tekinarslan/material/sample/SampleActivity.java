@@ -3,17 +3,22 @@ package com.tekinarslan.material.sample;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.apkfuns.logutils.LogUtils;
+import com.asha.nightowllib.NightOwl;
+import com.tekinarslan.material.sample.uitls.NightModeHelper;
 
 /**
  *��ҳ
@@ -31,11 +36,17 @@ public class SampleActivity extends ActionBarActivity {
     private Toolbar toolbar;
 
     SlidingTabLayout slidingTabLayout;
-
+    private NightModeHelper mNightModeHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        NightOwl.owlBeforeCreate(this);
+
         super.onCreate(savedInstanceState);
+        mNightModeHelper = new NightModeHelper(this, R.style.AppTheme_Light);
         setContentView(R.layout.activity_sample);
+
+        NightOwl.owlAfterCreate(this);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.navdrawer);
@@ -58,7 +69,7 @@ public class SampleActivity extends ActionBarActivity {
         drawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(drawerToggle);
         String[] values = new String[]{
-                "DEFAULT", "RED", "BLUE", "MATERIAL GREY"
+                "DEFAULT", "RED", "BLUE", "MATERIAL GREY","夜间模式","NightOwl:夜间模式切换"
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
@@ -72,33 +83,52 @@ public class SampleActivity extends ActionBarActivity {
                         mDrawerList.setBackgroundColor(getResources().getColor(R.color.material_deep_teal_500));
                         toolbar.setBackgroundColor(getResources().getColor(R.color.material_deep_teal_500));
                         slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.material_deep_teal_500));
-                        mDrawerLayout.closeDrawer(Gravity.START);
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case 1:
                         mDrawerList.setBackgroundColor(getResources().getColor(R.color.red));
                         toolbar.setBackgroundColor(getResources().getColor(R.color.red));
                         slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.red));
-                        mDrawerLayout.closeDrawer(Gravity.START);
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
 
                         break;
                     case 2:
                         mDrawerList.setBackgroundColor(getResources().getColor(R.color.blue));
                         toolbar.setBackgroundColor(getResources().getColor(R.color.blue));
                         slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.blue));
-                        mDrawerLayout.closeDrawer(Gravity.START);
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
 
                         break;
                     case 3:
                         mDrawerList.setBackgroundColor(getResources().getColor(R.color.material_blue_grey_800));
                         toolbar.setBackgroundColor(getResources().getColor(R.color.material_blue_grey_800));
                         slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.material_blue_grey_800));
-                        mDrawerLayout.closeDrawer(Gravity.START);
+                        mDrawerLayout.closeDrawer(GravityCompat.START);
 
+                        break;
+                    case 4:
+                        mNightModeHelper.toggle();
+                        break;
+                    case 5:
+                        //NightOwl
+                        NightOwl.owlNewDress(SampleActivity.this);
+                        LogUtils.d("NightOwl......");
                         break;
                 }
 
             }
         });
+    }
+
+
+    private void  setTheme(){
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        NightOwl.owlResume(this);
     }
 
     @Override
@@ -110,14 +140,18 @@ public class SampleActivity extends ActionBarActivity {
 
         switch (item.getItemId()) {
             case android.R.id.home:
-                mDrawerLayout.openDrawer(Gravity.START);
+                mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_setting,menu);
+        return true;
+    }
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
