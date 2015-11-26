@@ -176,7 +176,7 @@ public class CustomRoundTextView extends View{
 			}
 		}
 		setMeasuredDimension(mWidth, mHeight);
-		LogUtils.d("width="+mWidth+"  height="+mHeight);
+//		LogUtils.d("width="+mWidth+"  height="+mHeight);
 
 	}
 

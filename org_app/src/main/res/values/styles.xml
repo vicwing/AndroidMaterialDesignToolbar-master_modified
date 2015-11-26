@@ -1,6 +1,5 @@
 <resources  xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppTheme" parent="AppTheme.Base" />
 
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -13,14 +12,14 @@
 
     <!--蓝色主题-->
     <style name="THeme_Blue" parent="AppTheme.Base">
-        <item name="colorPrimary">@color/wallet_highlighted_text_holo_dark</item>
-        <item name="colorPrimaryDark">@color/wallet_holo_blue_light</item>
+        <item name="colorPrimary">@color/common_plus_signin_btn_text_dark_default</item>
+        <item name="colorPrimaryDark">@color/common_plus_signin_btn_text_dark_disabled</item>
     </style>
 
     <!--白色主题-->
     <style name="THeme_White" parent="AppTheme.Base">
-        <item name="colorPrimary">@color/wallet_highlighted_text_holo_dark</item>
-        <item name="colorPrimaryDark">@color/wallet_holo_blue_light</item>
+        <item name="colorPrimary">@color/common_plus_signin_btn_text_dark_default</item>
+        <item name="colorPrimaryDark">@color/common_plus_signin_btn_text_dark_disabled</item>
     </style>
 
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">

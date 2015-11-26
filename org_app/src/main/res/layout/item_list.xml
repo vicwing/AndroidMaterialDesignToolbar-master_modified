@@ -52,7 +52,7 @@
         style="@style/MyTextStyle"
         android:layout_marginTop="10dp"
         android:background="#5cbe6c"
-        android:drawableLeft="@drawable/common_signin_btn_icon_normal_dark"
+
         android:drawablePadding="5dp"
         android:paddingBottom="3dp"
         android:paddingLeft="5dp"

@@ -386,7 +386,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
 //					childAt.setSelected(true);
                 }else{
 //					childAt.setTextColor(Color.BLACK);
-                    LogUtils.d("123", "childAt.setSelected(false)");
 //					childAt.setSelected(false);
                     childAt.setTextColor(TITLE_TEXT_DEFAULT_COLOR);
                 }

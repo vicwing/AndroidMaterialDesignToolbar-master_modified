@@ -18,7 +18,6 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
-import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
 
 
@@ -176,7 +175,7 @@ public class CustomImageView extends View{
 			}
 		}
 		setMeasuredDimension(mWidth, mHeight);
-		LogUtils.d("width="+mWidth+"  height="+mHeight);
+//		LogUtils.d("width="+mWidth+"  height="+mHeight);
 
 	}
 

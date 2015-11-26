@@ -18,6 +18,7 @@ import android.widget.ListView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.asha.nightowllib.NightOwl;
+import com.socks.library.KLog;
 import com.tekinarslan.material.sample.uitls.NightModeHelper;
 
 /**
@@ -47,6 +48,8 @@ public class SampleActivity extends ActionBarActivity {
         setContentView(R.layout.activity_sample);
 
         NightOwl.owlAfterCreate(this);
+       KLog.init(true);
+        KLog.d("22222222222222222222222222222222222222222");
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.navdrawer);

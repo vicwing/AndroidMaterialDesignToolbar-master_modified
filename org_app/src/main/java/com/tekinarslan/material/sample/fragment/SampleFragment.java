@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
+import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.tekinarslan.material.sample.FloatingActionButton;
 import com.tekinarslan.material.sample.ProgressBarCircular;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.bean.Person;
+import com.tekinarslan.material.sample.http.MyTagHandler;
 import com.tekinarslan.material.sample.http.URLImageGetter;
 
 import java.io.IOException;
@@ -42,6 +44,7 @@ public class SampleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         position = getArguments().getInt(ARG_POSITION);
+        LogUtils.d("position="+position);
         View rootView = inflater.inflate(R.layout.page, container, false);
 
         ProgressBarCircular progressBarCircular = (ProgressBarCircular) rootView.findViewById(R.id.progress);
@@ -50,7 +53,9 @@ public class SampleFragment extends Fragment {
         switchColor(progressBarCircular, fab);
 
         textHtmlDemo(rootView);
-        printLogTest();
+
+//        printLogTest();
+
         return rootView;
     }
     //设置背景颜色
@@ -79,27 +84,65 @@ public class SampleFragment extends Fragment {
     }
 
     private void textHtmlDemo(View rootView) {
-        final TextView content = (TextView) rootView.findViewById(R.id.demo);
+        final TextView textview = (TextView) rootView.findViewById(R.id.demo);
 
         final String html = "<h2>html测试</h2><p font='red'>这是测试内容</p><p><img src='http://www.baidu.com/img/baidu_sylogo1.gif'></p>";
-//        tv.post(new Runnable() {
+        //方法一: 尝试失败.图片显示有问题.
+//        textview.post(new Runnable() {
 //            @Override
 //            public void run() {
-//                tv.setText(Html.fromHtml(html, new Html.ImageGetter() {
+//                textview.setText(Html.fromHtml(html, new Html.ImageGetter() {
 //                    @Override
-//                    public Drawable getDrawable(String source) {
-//                        Drawable drawable = httpGetDrawable(source);
-//                        return drawable;
+//                    public Drawable getDrawable(final String source) {
+//                        final Drawable[] drawable = new Drawable[1];
+//                            new Runnable(){
+//
+//                                @Override
+//                                public void run() {
+//                                     drawable[0] = httpGetDrawable(source);
+//                                    LogUtils.d("drable[0]"+drawable[0]);
+//                                }
+//                            };
+//                        return drawable[0];
 //                    }
 //                }, null));
 //            }
 //        });
 
 
+        //方法二:
+//        textview.setMovementMethod(LinkMovementMethod.getInstance());//加这句才能让里面的超链接生效
+//        URLImageGetter reviewImgGetter = new URLImageGetter(getActivity(), textview);//实例化URLImageGetter类
+//        textview.setText(Html.fromHtml(html, reviewImgGetter, null));
 
-        content.setMovementMethod(LinkMovementMethod.getInstance());//加这句才能让里面的超链接生效
-        URLImageGetter ReviewImgGetter = new URLImageGetter(getActivity(), content);//实例化URLImageGetter类
-        content.setText(Html.fromHtml(html, ReviewImgGetter, null));
+        //方法三:图片相应点击事件
+        //项目出处:http://zhangqian.me/android-textview
+//        Spanned spanned = Html.fromHtml(html, new URLImageGetter(getActivity(), textview), new Html.TagHandler() {
+//            @Override
+//            public void handleTag(boolean opening, String tag, Editable output, XMLReader xmlReader) {
+//                    LogUtils.d("tag"+tag);
+//
+//                // 处理标签<img>
+//                if (tag.toLowerCase().equals("img")) {
+//                    // 获取长度
+//                    int len = output.length();
+//                    // 获取图片地址
+//                    ImageSpan[] images = output.getSpans(len-1, len, ImageSpan.class);
+//
+//                    for (int i = 0; i < images.length; i++) {
+//                          LogUtils.d("length="+images.length+"  spanString===="+images[i].getSource());
+//                    }
+//                    String imgURL = images[0].getSource();
+//                    // 使图片可点击并监听点击事件
+////                    output.setSpan(new ImageClick(getActivity(), imgURL), len-1, len, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//                }
+//
+//            }
+//        });
+        Spanned spanned = Html.fromHtml(html, new URLImageGetter(getActivity(), textview), new MyTagHandler(getActivity()));
+        textview.setText(spanned);
+        textview.setMovementMethod(LinkMovementMethod.getInstance());
+
 
     }
 
@@ -173,7 +216,7 @@ public class SampleFragment extends Fragment {
     private Drawable httpGetDrawable(String params) {
         Drawable myDrawable = null;
         try {
-            myDrawable = Drawable.createFromStream(new URL(params).openStream(), "baidu_sylogo1.gif");
+            myDrawable = Drawable.createFromStream(new URL(params).openStream(), "http://www.baidu.com/img/baidu_sylogo1.gif");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
