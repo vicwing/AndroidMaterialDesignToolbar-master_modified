@@ -1,4 +1,4 @@
-package com.tekinarslan.material.sample.http;
+package com.tekinarslan.material.sample.http.textview_imggetter;
 
 import android.app.Activity;
 import android.content.Context;

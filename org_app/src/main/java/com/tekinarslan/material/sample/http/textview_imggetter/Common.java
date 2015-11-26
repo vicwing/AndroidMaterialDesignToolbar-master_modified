@@ -1,4 +1,4 @@
-package com.tekinarslan.material.sample.http;
+package com.tekinarslan.material.sample.http.textview_imggetter;
 
 import java.security.MessageDigest;
 

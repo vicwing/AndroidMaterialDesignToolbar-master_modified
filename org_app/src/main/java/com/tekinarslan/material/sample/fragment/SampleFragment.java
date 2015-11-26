@@ -18,8 +18,8 @@ import com.tekinarslan.material.sample.FloatingActionButton;
 import com.tekinarslan.material.sample.ProgressBarCircular;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.bean.Person;
-import com.tekinarslan.material.sample.http.MyTagHandler;
-import com.tekinarslan.material.sample.http.URLImageGetter;
+import com.tekinarslan.material.sample.http.textview_imggetter.MyTagHandler;
+import com.tekinarslan.material.sample.http.textview_imggetter.URLImageGetter;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
