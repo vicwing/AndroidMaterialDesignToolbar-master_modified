@@ -42,13 +42,12 @@ public class SampleActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         NightOwl.owlBeforeCreate(this);
-
         super.onCreate(savedInstanceState);
         mNightModeHelper = new NightModeHelper(this, R.style.AppTheme_Light);
         setContentView(R.layout.activity_sample);
 
         NightOwl.owlAfterCreate(this);
-       KLog.init(true);
+          KLog.init(true);
         KLog.d("22222222222222222222222222222222222222222");
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
