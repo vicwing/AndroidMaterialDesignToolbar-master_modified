@@ -16,40 +16,58 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.apkfuns.logutils.LogUtils;
 import com.asha.nightowllib.NightOwl;
 import com.socks.library.KLog;
 import com.tekinarslan.material.sample.uitls.NightModeHelper;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
- *��ҳ
+ * ��ҳ
  */
 public class SampleActivity extends ActionBarActivity {
+    private RequestQueue mRequestQueue;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar1;
 
+    @Bind(R.id.sliding_tabs)
+    SlidingTabLayout slidingTabs;
+
+    @Bind(R.id.viewpager)
+    ViewPager viewpager;
+    @Bind(R.id.navdrawer)
+    ListView navdrawer;
+    @Bind(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle drawerToggle;
 
     private ListView mDrawerList;
     ViewPager pager;
-    private String titles[] = new String[]{"Sample Tab 0", "Sample Tab 1", "Sample Tab 2", "Sample Tab 3","Sample Tab 4"
+    private String titles[] = new String[]{"Sample Tab 0", "Sample Tab 1", "Sample Tab 2", "Sample Tab 3", "Sample Tab 4"
             , "Sample Tab 5", "Sample Tab 6", "Sample Tab 7"};
-//    private String titles[] = new String[]{"写字楼", "二手房", "租房", "新房" };
+    //    private String titles[] = new String[]{"写字楼", "二手房", "租房", "新房" };
     private Toolbar toolbar;
 
     SlidingTabLayout slidingTabLayout;
     private NightModeHelper mNightModeHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        mRequestQueue =  Volley.newRequestQueue(this);
         NightOwl.owlBeforeCreate(this);
         super.onCreate(savedInstanceState);
         mNightModeHelper = new NightModeHelper(this, R.style.AppTheme_Light);
         setContentView(R.layout.activity_sample);
+        ButterKnife.bind(this);
 
         NightOwl.owlAfterCreate(this);
-          KLog.init(true);
+        KLog.init(true);
         KLog.d("22222222222222222222222222222222222222222");
-
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.navdrawer);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -71,7 +89,7 @@ public class SampleActivity extends ActionBarActivity {
         drawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(drawerToggle);
         String[] values = new String[]{
-                "DEFAULT", "RED", "BLUE", "MATERIAL GREY","夜间模式","NightOwl:夜间模式切换"
+                "DEFAULT", "RED", "BLUE", "MATERIAL GREY", "夜间模式", "NightOwl:夜间模式切换"
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
@@ -123,7 +141,7 @@ public class SampleActivity extends ActionBarActivity {
     }
 
 
-    private void  setTheme(){
+    private void setTheme() {
 
     }
 
@@ -151,9 +169,10 @@ public class SampleActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_setting,menu);
+        getMenuInflater().inflate(R.menu.menu_setting, menu);
         return true;
     }
+
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);

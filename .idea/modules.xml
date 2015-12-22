@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidMaterialDesignToolbar-master_modified.iml" filepath="$PROJECT_DIR$/AndroidMaterialDesignToolbar-master_modified.iml" />
       <module fileurl="file://$PROJECT_DIR$/blogcodes_demo/blogcodes_demo.iml" filepath="$PROJECT_DIR$/blogcodes_demo/blogcodes_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/multitheme-master/multitheme-master.iml" filepath="$PROJECT_DIR$/multitheme-master/multitheme-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/nightowllib/nightowllib.iml" filepath="$PROJECT_DIR$/nightowllib/nightowllib.iml" />
       <module fileurl="file://$PROJECT_DIR$/org_app/org_app.iml" filepath="$PROJECT_DIR$/org_app/org_app.iml" />
     </modules>

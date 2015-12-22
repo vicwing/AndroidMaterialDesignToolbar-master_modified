@@ -5,7 +5,7 @@ repositories {
 }
 android {
     compileSdkVersion 23
-    buildToolsVersion "21.1"
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.material.sample"
@@ -19,6 +19,7 @@ android {
 }
 repositories {
     maven { url "https://jitpack.io" }
+//    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -33,8 +34,13 @@ dependencies {
     compile project(':nightowllib')
     compile 'com.google.android.gms:play-services-base:8.3.0'
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.6'
-    compile 'com.github.zhaokaiqiang.klog:library:0.0.1'//log工具
+    compile 'com.github.zhaokaiqiang.klog:library:0.0.1'
+    //log工具
     compile 'com.jakewharton:butterknife:7.0.1'
+    //    compile 'com.mcxiaoke.volley:library:1.0.19-SNAPSHOT'
+//    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+
+    compile 'com.google.code.gson:gson:2.2.+'
 }
 
 //apply plugin:'android-apt'

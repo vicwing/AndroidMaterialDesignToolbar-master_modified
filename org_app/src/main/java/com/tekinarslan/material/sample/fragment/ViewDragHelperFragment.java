@@ -6,7 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
+import com.tekinarslan.material.sample.base.MyApplication;
+import com.tekinarslan.material.sample.common.https.volley.JsonObjectDefaultPostRequest;
+
+import org.json.JSONObject;
 
 public class ViewDragHelperFragment extends Fragment {
 
@@ -32,7 +39,28 @@ public class ViewDragHelperFragment extends Fragment {
 //                Intent intent= new Intent(getActivity(),)
             }
         });
+
+
+        volleyGet();
         return rootView;
+    }
+
+    private void volleyGet() {
+        LogUtils.d("222222222222222222222222222222222");
+        String url="http://172.16.1.189:8087/qfang-api/appapi/v3_6/enums/filters/room?dataSource=SHENZHEN&bizType=SALE";
+        JsonObjectDefaultPostRequest req = new JsonObjectDefaultPostRequest(url,
+                null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                LogUtils.d("response  "+ response.toString());
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        });
+        MyApplication.getInstance().addToRequestQueue(req);
     }
 
 
