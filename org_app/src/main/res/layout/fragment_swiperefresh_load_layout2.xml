@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.tekinarslan.material.sample.customui.SwipeRefreshLayoutLoad2 xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipe_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".SampleActivity"
+    tools:showIn=""
     android:background="@color/blue">
 
 
     <ListView
         android:id="@+id/listview_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        tools:listitem="@layout/item_fragment_swiperefresh_load_layout2_list"
+        android:layout_height="match_parent"
+        android:divider="@color/red" />
 </com.tekinarslan.material.sample.customui.SwipeRefreshLayoutLoad2>

@@ -10,10 +10,12 @@ import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
+import com.bumptech.glide.Glide;
 import com.tekinarslan.material.sample.FloatingActionButton;
 import com.tekinarslan.material.sample.ProgressBarCircular;
 import com.tekinarslan.material.sample.R;
@@ -32,7 +34,7 @@ public class SampleFragment extends Fragment {
     private static final String ARG_POSITION = "position";
     public static final String TAG = SampleFragment.class.getSimpleName();
     private int position;
-
+    private ImageView glide_iv;
     public static SampleFragment newInstance(int position) {
         SampleFragment f = new SampleFragment();
         Bundle b = new Bundle();
@@ -53,7 +55,8 @@ public class SampleFragment extends Fragment {
         switchColor(progressBarCircular, fab);
 
         textHtmlDemo(rootView);
-
+         glide_iv = (ImageView) rootView.findViewById(R.id.glide_iv);
+        Glide.with(this).load("http://www.faxingw.cn/userimg/201208/meinv1.jpg").into(glide_iv);
 //        printLogTest();
 
         return rootView;

@@ -17,6 +17,8 @@
             <ListView
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
+                android:divider="@color/red"
+                android:dividerHeight="2px"
                 android:layout_height="match_parent" />
         </com.baoyz.widget.PullRefreshLayout>
         <com.tekinarslan.material.sample.customui.SideBar

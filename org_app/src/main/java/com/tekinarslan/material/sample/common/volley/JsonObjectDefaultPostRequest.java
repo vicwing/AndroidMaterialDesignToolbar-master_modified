@@ -1,4 +1,4 @@
-	package com.tekinarslan.material.sample.common.https.volley;
+	package com.tekinarslan.material.sample.common.volley;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;

@@ -11,7 +11,7 @@ import com.android.volley.VolleyError;
 import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.base.MyApplication;
-import com.tekinarslan.material.sample.common.https.volley.JsonObjectDefaultPostRequest;
+import com.tekinarslan.material.sample.common.volley.JsonObjectDefaultPostRequest;
 
 import org.json.JSONObject;
 
@@ -46,7 +46,7 @@ public class ViewDragHelperFragment extends Fragment {
     }
 
     private void volleyGet() {
-        LogUtils.d("222222222222222222222222222222222");
+//        LogUtils.d("222222222222222222222222222222222");
         String url="http://172.16.1.189:8087/qfang-api/appapi/v3_6/enums/filters/room?dataSource=SHENZHEN&bizType=SALE";
         JsonObjectDefaultPostRequest req = new JsonObjectDefaultPostRequest(url,
                 null, new Response.Listener<JSONObject>() {

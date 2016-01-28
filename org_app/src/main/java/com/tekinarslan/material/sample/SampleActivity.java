@@ -26,9 +26,6 @@ import com.tekinarslan.material.sample.uitls.NightModeHelper;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * ��ҳ
- */
 public class SampleActivity extends ActionBarActivity {
     private RequestQueue mRequestQueue;
     @Bind(R.id.toolbar)
@@ -67,9 +64,8 @@ public class SampleActivity extends ActionBarActivity {
 
         NightOwl.owlAfterCreate(this);
         KLog.init(true);
-        KLog.d("22222222222222222222222222222222222222222");
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.navdrawer);
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -91,8 +87,17 @@ public class SampleActivity extends ActionBarActivity {
         String[] values = new String[]{
                 "DEFAULT", "RED", "BLUE", "MATERIAL GREY", "夜间模式", "NightOwl:夜间模式切换"
         };
+        setmDrawerList(values);
+    }
+
+    /**
+     * 抽屉
+     * @param values
+     */
+    private void setmDrawerList(String[] values) {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        mDrawerList = (ListView) findViewById(R.id.navdrawer);
         mDrawerList.setAdapter(adapter);
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -139,7 +144,6 @@ public class SampleActivity extends ActionBarActivity {
             }
         });
     }
-
 
     private void setTheme() {
 

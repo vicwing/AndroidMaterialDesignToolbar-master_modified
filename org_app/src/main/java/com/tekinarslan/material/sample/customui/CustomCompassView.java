@@ -18,12 +18,12 @@ public class CustomCompassView extends View {
     private Paint paint;
     public CustomCompassView(Context context) {
         super(context);
-        LogUtils.d("000000000000000");
+//        LogUtils.d("000000000000000");
     }
 
     public CustomCompassView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        LogUtils.d("1111111111111111111111");
+//        LogUtils.d("1111111111111111111111");
         paint = new Paint();
     }
 

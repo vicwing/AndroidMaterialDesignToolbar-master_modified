@@ -28,7 +28,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             // Open FragmentTab1.java
             case 0:
-                return ViewDragHelperFragment.newInstance(position);
+                return SampleFragment.newInstance(position);
             case 1:
                 return  CustomViewFragment.newInstance(position);
             case 2://
@@ -42,8 +42,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 6:
                 return SwipRefreshLoadFragment3.newInstance(position);
             case 7:
-                return SampleFragment.newInstance(position);
-
+              return ViewDragHelperFragment.newInstance(position);
         }
         return null;
     }

@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.asha.myapplication.MainActivity">
+    tools:context=".SampleActivity">
 
 
     <LinearLayout
@@ -28,7 +28,9 @@
             android:layout_height="wrap_content"
 
             android:background="?attr/colorPrimaryDark" />
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
@@ -48,7 +50,6 @@
         android:divider="@android:color/white"
         android:dividerHeight="1dp"
         android:drawSelectorOnTop="false"
-
         night:night_titleTextColor="@color/tablayout_text_color_selected_n"
         app:popupTheme="@style/MyPopupMenu"
         night:night_popupTheme="@style/MyPopupMenu.Night"

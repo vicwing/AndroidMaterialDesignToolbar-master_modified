@@ -57,7 +57,7 @@ public class SwipRefreshLoadFragment2 extends Fragment {
         mListView = (ListView) rootView.findViewById(R.id.listview_lv);
         LogUtils.d("mDatas=="+mDatas.size());
         LogUtils.e("mDatas=="+mDatas.size());
-        mAdapter = new QuickAdapter<Bean>(getActivity(), R.layout.item_list, mDatas) {
+        mAdapter = new QuickAdapter<Bean>(getActivity(), R.layout.item_fragment_swiperefresh_load_layout2_list, mDatas) {
 
             @Override
             protected void convert(BaseAdapterHelper helper, Bean item) {

@@ -6,6 +6,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.asha.nightowllib.NightOwl;
+import com.elvishew.xlog.LogLevel;
+import com.elvishew.xlog.XLog;
 import com.tekinarslan.material.sample.base.handler.OwlCustomTable;
 import com.tekinarslan.material.sample.base.handler.ToolbarHandler;
 
@@ -23,7 +25,10 @@ public class MyApplication extends Application {
         NightOwl.builder().defaultMode(0).create();
         NightOwl.owlRegisterHandler(ToolbarHandler.class, OwlCustomTable.OwlToolbar.class);
         mRequestQueue =  Volley.newRequestQueue(this);
+
+        XLog.init(LogLevel.ALL);
     }
+
     public static MyApplication getInstance() {
         return mInstance;
     }

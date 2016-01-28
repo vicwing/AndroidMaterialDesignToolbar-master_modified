@@ -36,5 +36,4 @@
         android:background="@color/colorPrimary"
         night:night_background="@color/colorPrimary_n" />
 
-
 </com.tekinarslan.material.sample.customgroupview.ViewDragHelperViewGroupDemo>

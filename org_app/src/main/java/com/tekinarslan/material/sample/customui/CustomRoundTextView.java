@@ -18,7 +18,6 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
-import com.apkfuns.logutils.LogUtils;
 import com.tekinarslan.material.sample.R;
 
 
@@ -205,7 +204,7 @@ public class CustomRoundTextView extends View{
 		r2.right=getMeasuredWidth()-strokerWidth;                                   //右边
 		r2.bottom=+getMeasuredHeight()-strokerWidth;
 
-		LogUtils.d("getLeft=" + getLeft() + "  getTop=" + getTop());
+//		LogUtils.d("getLeft=" + getLeft() + "  getTop=" + getTop());
 //		r2.set(strokerWidth, strokerWidth, getMeasuredWidth() - strokerWidth, getMeasuredHeight() - strokerWidth);
 		mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
 		canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));

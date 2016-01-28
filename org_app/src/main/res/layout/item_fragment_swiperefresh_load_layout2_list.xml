@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    tools:context=".SampleActivity"
     android:background="#ffffff"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/tv_title"
+        style="@style/MyTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:text="红色钱包"
-        style="@style/MyTextStyle"
-        android:textSize="16sp"
-        android:textColor="#444444" >
-    </TextView>
+        android:textColor="#444444"
+        android:textSize="16sp"></TextView>
 
     <TextView
         android:id="@+id/tv_describe"
@@ -28,28 +29,26 @@
         android:minLines="1"
         android:text="周三早上丢失了红色钱包，在食堂二楼"
         android:textColor="#898989"
-        android:textSize="16sp" >
-    </TextView>
+        android:textSize="16sp"></TextView>
 
     <TextView
         android:id="@+id/tv_time"
+        style="@style/MyTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_describe"
         android:layout_marginTop="10dp"
-        style="@style/MyTextStyle"
         android:text="20130240122"
         android:textColor="#898989"
-        android:textSize="12sp" >
-    </TextView>
+        android:textSize="12sp"></TextView>
 
     <TextView
         android:id="@+id/tv_phone"
+        style="@style/MyTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@id/tv_describe"
-        style="@style/MyTextStyle"
         android:layout_marginTop="10dp"
         android:background="#5cbe6c"
 
@@ -60,7 +59,6 @@
         android:paddingTop="3dp"
         android:text="138024249542"
         android:textColor="#ffffff"
-        android:textSize="12sp" >
-    </TextView>
+        android:textSize="12sp"></TextView>
 
 </RelativeLayout>
