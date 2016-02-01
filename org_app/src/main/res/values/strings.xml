@@ -10,4 +10,11 @@
 
     <string name="test" >ffa</string>
 
+
+    <string name="a_fragment" translation_description="false">Hello blank fragment</string>
+    <string name="s_fragment" translation_description="false">Hello blank fragment</string>
+    <string name="d_fragment" translation_description="false">Hello blank fragment</string>
+    <string name="f_fragment" translation_description="false">Hello blank fragment</string>
+
+
 </resources>

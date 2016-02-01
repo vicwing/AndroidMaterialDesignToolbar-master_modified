@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.android.databinding'//databinding
+//apply plugin: 'com.android.databinding'//databinding
 
 android {
     compileSdkVersion 23
@@ -49,6 +49,8 @@ dependencies {
 
     //网络
     compile 'com.squareup.okhttp3:okhttp:3.0.0-RC1'
+
+//    compile 'it.neokree:MaterialTabs:0.11'
 }
 repositories {
     flatDir {

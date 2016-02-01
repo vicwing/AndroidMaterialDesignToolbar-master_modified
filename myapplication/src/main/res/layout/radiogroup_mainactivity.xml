@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              tools:context=".MainActivity">
+
+    <!--<FrameLayout-->
+    <!--android:id="@+id/main_content"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1"/>-->
+
+    <com.example.cdj.myapplication.cusview.MyViewPager
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <RadioGroup
+        android:id="@+id/tab_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
+
+        <RadioButton
+            android:id="@+id/one"
+            style="@style/radio_button"
+            android:checked="true"
+            android:drawablePadding="6dp"
+            android:drawableTop="@drawable/icon_tab_home_selector"
+            android:text="微信"
+            />
+
+        <RadioButton
+            android:id="@+id/two"
+            style="@style/radio_button"
+            android:drawablePadding="6dp"
+            android:drawableTop="@drawable/icon_tab_business_selector"
+            android:text="通讯录"
+            />
+
+        <RadioButton
+            android:id="@+id/three"
+            style="@style/radio_button"
+            android:drawableTop="@drawable/icon_tab_userinfo_selector"
+            android:text="我的账户"
+            />
+
+        <RadioButton
+            android:id="@+id/four"
+            style="@style/radio_button"
+            android:drawableTop="@drawable/icon_tab_discount_selector"
+            android:text="发现"
+            />
+    </RadioGroup>
+</LinearLayout>
