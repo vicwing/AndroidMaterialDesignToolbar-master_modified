@@ -1,4 +1,4 @@
-package com.tekinarslan.material.sample.fragment_oschina;
+package com.tekinarslan.material.sample.fragment.fragment_oschina;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

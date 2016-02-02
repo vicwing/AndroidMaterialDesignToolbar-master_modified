@@ -21,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.apkfuns.logutils.LogUtils;
 import com.asha.nightowllib.NightOwl;
 import com.socks.library.KLog;
+import com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabLayout;
 import com.tekinarslan.material.sample.uitls.NightModeHelper;
 
 import butterknife.Bind;
@@ -45,9 +46,9 @@ public class SampleActivity extends ActionBarActivity {
 
     private ListView mDrawerList;
     ViewPager pager;
-    private String titles[] = new String[]{"Sample Tab 0", "Sample Tab 1", "Sample Tab 2", "Sample Tab 3", "Sample Tab 4"
-            , "Sample Tab 5", "Sample Tab 6", "Sample Tab 7"};
-    //    private String titles[] = new String[]{"写字楼", "二手房", "租房", "新房" };
+//    private String titles[] = new String[]{"Sample Tab 0", "Sample Tab 1", "Sample Tab 2", "Sample Tab 3", "Sample Tab 4"
+//            , "Sample Tab 5", "Sample Tab 6", "Sample Tab 7"};
+        private String titles[] = new String[]{"写字楼啦啦啦", "二手房", "租房", "新房","查询房价"};
     private Toolbar toolbar;
 
     SlidingTabLayout slidingTabLayout;
@@ -73,6 +74,9 @@ public class SampleActivity extends ActionBarActivity {
         }
         pager = (ViewPager) findViewById(R.id.viewpager);
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
+
+        //设定特定的宽度.
+        slidingTabLayout.setWidthLocked(true);
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), titles));
 
         slidingTabLayout.setViewPager(pager);

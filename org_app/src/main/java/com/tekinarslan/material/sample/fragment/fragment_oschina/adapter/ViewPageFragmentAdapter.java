@@ -1,4 +1,4 @@
-package com.tekinarslan.material.sample.fragment_oschina.adapter;
+package com.tekinarslan.material.sample.fragment.fragment_oschina.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.customui.PagerSlidingTabStrip;
-import com.tekinarslan.material.sample.fragment_oschina.ViewPageInfo;
+import com.tekinarslan.material.sample.fragment.fragment_oschina.ViewPageInfo;
 
 import java.util.ArrayList;
 

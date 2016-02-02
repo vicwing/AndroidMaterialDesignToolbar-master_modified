@@ -1,4 +1,4 @@
-package com.tekinarslan.material.sample.fragment_oschina;
+package com.tekinarslan.material.sample.fragment.fragment_oschina;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.fragment.CustomViewFragment;
 import com.tekinarslan.material.sample.fragment.SampleFragment;
-import com.tekinarslan.material.sample.fragment_oschina.adapter.ViewPageFragmentAdapter;
+import com.tekinarslan.material.sample.fragment.fragment_oschina.adapter.ViewPageFragmentAdapter;
 
 
 /**

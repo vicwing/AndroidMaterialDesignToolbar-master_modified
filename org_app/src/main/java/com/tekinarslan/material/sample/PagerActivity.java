@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 import com.tekinarslan.material.sample.common.utils.LogUtils;
-import com.tekinarslan.material.sample.fragment_oschina.BlogViewPagerFragment;
+import com.tekinarslan.material.sample.fragment.fragment_oschina.BlogViewPagerFragment;
 
 /**
  * Created by cdj on 2015/7/17.

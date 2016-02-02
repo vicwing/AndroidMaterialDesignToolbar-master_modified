@@ -63,8 +63,8 @@ TASK com.tekinarslan.material.sample id=268
                       android.widget.TextView{307f3bb3 V.ED.... ... 180,43-615,124}
                       android.widget.ImageButton{9cf2570 VFED..C. ... 0,0-168,168}
                       android.support.v7.widget.ActionMenuView{2f3b40e9 V.E..... ... 1080,0-1080,168}
-                    com.tekinarslan.material.sample.SlidingTabLayout{737d16e VFED.... ... 0,168-1080,313 #7f0d005a app:id/sliding_tabs}
-                      com.tekinarslan.material.sample.SlidingTabStrip{3da7e00f V.ED.... ... 0,0-1080,145}
+                    com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabLayout{737d16e VFED.... ... 0,168-1080,313 #7f0d005a app:id/sliding_tabs}
+                      com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabStrip{3da7e00f V.ED.... ... 0,0-1080,145}
                         android.widget.TextView{159289c V.ED..C. .S. 0,0-270,145}
                         android.widget.TextView{1fe02a5 V.ED..C. ... 270,0-540,145}
                         android.widget.TextView{2e93967a V.ED..C. ... 540,0-810,145}

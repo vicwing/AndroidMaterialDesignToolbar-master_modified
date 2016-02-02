@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tekinarslan.material.sample;
+package com.tekinarslan.material.sample.customui.slidingtab_new;
 
 import android.R;
 import android.content.Context;
@@ -25,6 +25,8 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.apkfuns.logutils.LogUtils;
 
 
 class SlidingTabStrip extends LinearLayout {
@@ -99,10 +101,8 @@ class SlidingTabStrip extends LinearLayout {
     protected void onDraw(Canvas canvas) {
         final int height = getHeight();
         final int childCount = getChildCount();
-        final SlidingTabLayout.TabColorizer tabColorizer = mCustomTabColorizer != null
-                ? mCustomTabColorizer
-                : mDefaultTabColorizer;
-
+        final SlidingTabLayout.TabColorizer tabColorizer = mCustomTabColorizer != null ? mCustomTabColorizer : mDefaultTabColorizer;
+//        LogUtils.d("tabColorizer  "+tabColorizer);
         // Thick colored underline below the current selection
         if (childCount > 0) {
             View selectedTitle = getChildAt(mSelectedPosition);
@@ -125,13 +125,13 @@ class SlidingTabStrip extends LinearLayout {
             }
 
             mSelectedIndicatorPaint.setColor(color);
-//            LogUtils.d("123","left=="+left+"right=="+right);
-            canvas.drawRect(left, height - mSelectedIndicatorThickness, right,
-                    height, mSelectedIndicatorPaint);
+            canvas.drawRect(left, height - mSelectedIndicatorThickness, right,height, mSelectedIndicatorPaint);
+            LogUtils.d("left=="+left+"  right=="+right+"  width " +(right-left));
         }
 
         // Thin underline along the entire bottom edge
         canvas.drawRect(0, height - mBottomBorderThickness, getWidth(), height, mBottomBorderPaint);
+//        LogUtils.d("屏幕宽度 "+ getWidth());
     }
 
     /**

@@ -47,7 +47,7 @@ import android.widget.TextView;
  * The colors can be customized in two ways. The first and simplest is to
  * provide an array of colors via {@link #setSelectedIndicatorColors(int...)}.
  * The alternative is via the
- * {@link com.tekinarslan.material.sample.SlidingTabLayout.TabColorizer}
+ * {@link com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabLayout.TabColorizer}
  * interface which provides you complete control over which color is used for
  * any individual position.
  * <p>
@@ -118,7 +118,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
 	/**
 	 * Set the custom
-	 * {@link com.tekinarslan.material.sample.SlidingTabLayout.TabColorizer} to
+	 * {@link com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabLayout.TabColorizer} to
 	 * be used.
 	 *
 	 * If you only require simple custmisation then you can use
@@ -143,7 +143,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
 	/**
 	 * Set the {@link ViewPager.OnPageChangeListener}.
-	 * When using {@link com.tekinarslan.material.sample.SlidingTabLayout} you
+	 * When using {@link com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabLayout} you
 	 * are required to set any
 	 * {@link ViewPager.OnPageChangeListener} through
 	 * this method. This is so that the layout can update it's scroll position

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tekinarslan.material.sample;
+package com.tekinarslan.material.sample.customui.slidingtab_new;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -46,7 +46,7 @@ import com.apkfuns.logutils.LogUtils;
  * <p>
  * The colors can be customized in two ways. The first and simplest is to provide an array of colors
  * via {@link #setSelectedIndicatorColors(int...)}. The
- * alternative is via the {@link com.tekinarslan.material.sample.SlidingTabLayout.TabColorizer} interface which provides you complete control over
+ * alternative is via the {@link SlidingTabLayout.TabColorizer} interface which provides you complete control over
  * which color is used for any individual position.
  * <p>
  * The views used as tabs can be customized by calling {@link #setCustomTabView(int, int)},
@@ -55,7 +55,7 @@ import com.apkfuns.logutils.LogUtils;
 public class SlidingTabLayout extends HorizontalScrollView {
     /**
      * Allows complete control over the colors drawn in the tab layout. Set with
-     * {@link #setCustomTabColorizer(com.tekinarslan.material.sample.SlidingTabLayout.TabColorizer)}
+     * {@link #setCustomTabColorizer(SlidingTabLayout.TabColorizer)}
      * .
      */
     public interface TabColorizer {
@@ -113,7 +113,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     /**
      * Set the custom
-     * {@link com.tekinarslan.material.sample.SlidingTabLayout.TabColorizer} to
+     * {@link SlidingTabLayout.TabColorizer} to
      * be used.
      *
      * If you only require simple custmisation then you can use
@@ -139,7 +139,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     /**
      * Set the {@link android.support.v4.view.ViewPager.OnPageChangeListener}.
-     * When using {@link com.tekinarslan.material.sample.SlidingTabLayout} you
+     * When using {@link SlidingTabLayout} you
      * are required to set any
      * {@link android.support.v4.view.ViewPager.OnPageChangeListener} through
      * this method. This is so that the layout can update it's scroll position
@@ -262,11 +262,17 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             if (lockedWidth) {
                 // 锁定宽度
-                int tabWidth = viewWidth / mViewPager.getAdapter().getCount();
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                        tabWidth, LayoutParams.WRAP_CONTENT);
+                int tabWidth = viewWidth / mViewPager.getAdapter().getCount();//平均分割
+//                int tabWidth = tabView.getWidth();
+//                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(tabWidth, LayoutParams.WRAP_CONTENT);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+//                params.weight=1;
+//                params.width=0;
                 mTabStrip.addView(tabView, params);
+                LogUtils.d("tabViewWidth  "+tabView.getWidth()+"  tabWidth  "+tabWidth+"  tabTitleView "+tabTitleView.getText()+  "  tabTitleView.width "+tabTitleView.getWidth());
+
             } else {
+                LogUtils.d("tabView  "+tabView);
                 mTabStrip.addView(tabView);
             }
         }
