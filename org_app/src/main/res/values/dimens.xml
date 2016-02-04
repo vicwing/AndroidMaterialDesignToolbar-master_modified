@@ -6,4 +6,8 @@
 
     <dimen name="fab_elevation_lollipop">4dp</dimen>
 
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="sn_16sp">16sp</dimen>
+    <dimen name="sn_14sp">14sp</dimen>
+    <dimen name="sn_12sp">12sp</dimen>
 </resources>

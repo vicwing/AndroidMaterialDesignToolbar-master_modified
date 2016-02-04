@@ -1,54 +1,63 @@
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:night="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".SampleActivity">
 
 
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <include
+            android:id="@+id/appbar"
+            layout="@layout/toolbar"/>
+
+
+        <FrameLayout
+            android:id="@+id/frame_content"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar"
+            android:elevation="5dp"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:titleTextColor="#ffffff"
-            night:night_titleTextColor="@color/tablayout_text_color_selected_n"
-            app:popupTheme="@style/MyPopupMenu"
-            night:night_popupTheme="@style/MyPopupMenu.Night"/>
+            android:layout_gravity="end|bottom"
+            android:clickable="true"
+            android:background="@color/google_blue"
+            />
+    </android.support.design.widget.CoordinatorLayout>
 
-        <com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabLayout
-            android:id="@+id/sliding_tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimaryDark" />
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="1"
-            android:background="@android:color/white" />
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/navdrawer"
-        android:layout_width="@dimen/navdrawer_width"
+    <!--<ListView-->
+        <!--android:id="@+id/navdrawer"-->
+        <!--android:layout_width="@dimen/navdrawer_width"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:layout_marginTop="?attr/actionBarSize"-->
+        <!--android:background="?attr/colorPrimaryDark"-->
+        <!--android:choiceMode="singleChoice"-->
+        <!--android:divider="@android:color/white"-->
+        <!--android:dividerHeight="1dp"-->
+        <!--android:drawSelectorOnTop="false"-->
+        <!--app:popupTheme="@style/MyPopupMenu"-->
+        <!--night:night_popupTheme="@style/MyPopupMenu.Night"-->
+        <!--night:night_titleTextColor="@color/tablayout_text_color_selected_n"-->
+        <!--/>-->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:background="?attr/colorPrimaryDark"
-        android:choiceMode="singleChoice"
-        android:divider="@android:color/white"
-        android:dividerHeight="1dp"
-        android:drawSelectorOnTop="false"
-        night:night_titleTextColor="@color/tablayout_text_color_selected_n"
-        app:popupTheme="@style/MyPopupMenu"
-        night:night_popupTheme="@style/MyPopupMenu.Night"
-        />
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/navigation_menu" />
 
 </android.support.v4.widget.DrawerLayout>

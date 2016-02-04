@@ -22,15 +22,11 @@ import com.tekinarslan.material.sample.bean.Person;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class CustomViewFragment extends BaseFragment {
 
@@ -104,14 +100,14 @@ public class CustomViewFragment extends BaseFragment {
 
         ImageView glide_iv = (ImageView) rootView.findViewById(R.id.glide_iv);
         Glide.with(this).load("http://www.faxingw.cn/userimg/201208/meinv1.jpg").into(glide_iv);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                    LogUtils.d("okhttp~~~~~~~~~~~~~~~~~~~~~~请求");
-                    String response = OkHttpUtils.run("http://www.faxingw.cn/userimg/201208/meinv1.jpg");
-                    LogUtils.d("response   " + response);
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                    LogUtils.d("okhttp~~~~~~~~~~~~~~~~~~~~~~请求");
+//                    String response = OkHttpUtils.run("http://www.faxingw.cn/userimg/201208/meinv1.jpg");
+//                    LogUtils.d("response   " + response);
+//            }
+//        }).start();
         return rootView;
     }
     SeekBar myseekbar;
@@ -219,25 +215,25 @@ public class CustomViewFragment extends BaseFragment {
     LogUtils.d(" 外置  "+sdcard_path);
         return sdcard_path;
     }
-
-   static class OkHttpUtils {
-
-      static   OkHttpClient client = new OkHttpClient();
-
-      public static    String run(String url){
-            Request request = new Request.Builder()
-                    .url(url)
-                    .build();
-          Response response = null;
-          try {
-              response = client.newCall(request).execute();
-              return response.body().string();
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-         return  null;
-        }
-    }
+//
+//   static class OkHttpUtils {
+//
+//      static OkHttpClient client = new OkHttpClient();
+//
+//      public static    String run(String url){
+//            Request request = new Request.Builder()
+//                    .url(url)
+//                    .build();
+//          Response response = null;
+//          try {
+//              response = client.newCall(request).execute();
+//              return response.body().string();
+//          } catch (IOException e) {
+//              e.printStackTrace();
+//          }
+//         return  null;
+//        }
+//    }
 //    private void okhttp(){
 //        OkHttpClient client = new OkHttpClient();
 //        Request request = new Request.Builder()

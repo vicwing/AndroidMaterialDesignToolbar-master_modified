@@ -16,5 +16,18 @@
     <string name="d_fragment" translation_description="false">Hello blank fragment</string>
     <string name="f_fragment" translation_description="false">Hello blank fragment</string>
 
+    <string name="navigation_news">新闻</string>
+    <string name="navigation_images">图片</string>
+    <string name="navigation_weather">天气</string>
+    <string name="navigation_about">关于</string>
+
+
+    <string name="name">头像</string>
+
+    <string name="top">头条</string>
+    <string name="nba">NBA</string>
+    <string name="cars">汽车</string>
+    <string name="jokes">笑话</string>
+    <string name="load_fail">加载数据失败!</string>
 
 </resources>
