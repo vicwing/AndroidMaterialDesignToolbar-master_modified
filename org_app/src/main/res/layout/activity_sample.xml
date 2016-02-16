@@ -28,36 +28,43 @@
             android:elevation="5dp"
             android:scrollbars="none"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/id_floatingactionbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
-            android:clickable="true"
             android:background="@color/google_blue"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            app:backgroundTint="@color/main_blue_light"
+            app:elevation="6dp"
+            app:pressedTranslationZ="12dp"
+            app:rippleColor="@color/main_blue_dark"
             />
     </android.support.design.widget.CoordinatorLayout>
 
     <!--<ListView-->
-        <!--android:id="@+id/navdrawer"-->
-        <!--android:layout_width="@dimen/navdrawer_width"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_gravity="start"-->
-        <!--android:layout_marginTop="?attr/actionBarSize"-->
-        <!--android:background="?attr/colorPrimaryDark"-->
-        <!--android:choiceMode="singleChoice"-->
-        <!--android:divider="@android:color/white"-->
-        <!--android:dividerHeight="1dp"-->
-        <!--android:drawSelectorOnTop="false"-->
-        <!--app:popupTheme="@style/MyPopupMenu"-->
-        <!--night:night_popupTheme="@style/MyPopupMenu.Night"-->
-        <!--night:night_titleTextColor="@color/tablayout_text_color_selected_n"-->
-        <!--/>-->
+    <!--android:id="@+id/navdrawer"-->
+    <!--android:layout_width="@dimen/navdrawer_width"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="start"-->
+    <!--android:layout_marginTop="?attr/actionBarSize"-->
+    <!--android:background="?attr/colorPrimaryDark"-->
+    <!--android:choiceMode="singleChoice"-->
+    <!--android:divider="@android:color/white"-->
+    <!--android:dividerHeight="1dp"-->
+    <!--android:drawSelectorOnTop="false"-->
+    <!--app:popupTheme="@style/MyPopupMenu"-->
+    <!--night:night_popupTheme="@style/MyPopupMenu.Night"-->
+    <!--night:night_titleTextColor="@color/tablayout_text_color_selected_n"-->
+    <!--/>-->
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/navigation_header"
-        app:menu="@menu/navigation_menu" />
+        app:menu="@menu/navigation_menu"/>
 
 </android.support.v4.widget.DrawerLayout>

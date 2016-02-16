@@ -24,11 +24,15 @@ import com.tekinarslan.material.sample.main.presenter.MainPresenterImpl;
 import com.tekinarslan.material.sample.main.view.MainView;
 import com.tekinarslan.material.sample.news.NewsFragment;
 import com.tekinarslan.material.sample.uitls.NightModeHelper;
+import com.tekinarslan.material.sample.uitls.SnackbarUtil;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SampleActivity extends AppCompatActivity implements MainView {
+/**
+ * 全新的activity 左侧用的是NavigationView,并且有一个FloatingActionButton
+ */
+public class SampleActivity extends AppCompatActivity implements MainView,View.OnClickListener {
 
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
@@ -43,13 +47,16 @@ public class SampleActivity extends AppCompatActivity implements MainView {
     @Bind(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
 
+    @Bind(R.id.id_floatingactionbutton)
+    android.support.design.widget.FloatingActionButton idFloatingactionbutton;
+
     private ActionBarDrawerToggle mDrawerToggle;
 
 
     private ListView mDrawerList;
-//    private String titles[] = new String[]{"Sample Tab 0", "Sample Tab 1", "Sample Tab 2", "Sample Tab 3", "Sample Tab 4"
+    //    private String titles[] = new String[]{"Sample Tab 0", "Sample Tab 1", "Sample Tab 2", "Sample Tab 3", "Sample Tab 4"
 //            , "Sample Tab 5", "Sample Tab 6", "Sample Tab 7"};
-        private String titles[] = new String[]{"写字楼啦啦啦", "二手房", "租房", "新房","查询房价"};
+    private String titles[] = new String[]{"写字楼啦啦啦", "二手房", "租房", "新房", "查询房价"};
 
     SlidingTabLayout slidingTabLayout;
     private NightModeHelper mNightModeHelper;
@@ -64,7 +71,6 @@ public class SampleActivity extends AppCompatActivity implements MainView {
         setContentView(R.layout.activity_sample);
         ButterKnife.bind(this);
 //        NightOwl.owlAfterCreate(this);
-
         if (mToolbar != null) {
             setSupportActionBar(mToolbar);
             mToolbar.setNavigationIcon(R.drawable.ic_ab_drawer);
@@ -81,6 +87,7 @@ public class SampleActivity extends AppCompatActivity implements MainView {
         mMainPresenter = new MainPresenterImpl(this);
         switch2News();
 //        setDrawerLayout();
+        idFloatingactionbutton.setOnClickListener(this);
     }
 
 
@@ -221,5 +228,18 @@ public class SampleActivity extends AppCompatActivity implements MainView {
     public void switch2About() {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new SampleFragment()).commit();
         mToolbar.setTitle(R.string.navigation_about);
+    }
+
+    @Override
+    public void onClick(View v) {
+        LogUtils.d("click~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        switch (v.getId()) {
+            // FloatingActionButton的点击事件
+            case R.id.id_floatingactionbutton:
+                SnackbarUtil.show(v, getString(R.string.plusone), 0);
+                break;
+            default:
+                break;
+        }
     }
 }

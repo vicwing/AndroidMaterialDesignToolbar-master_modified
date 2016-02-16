@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.apkfuns.logutils.LogUtils;
 import com.bumptech.glide.Glide;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.bean.NewsBean;
@@ -73,7 +74,6 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof ItemViewHolder) {
-
             NewsBean news = mData.get(position);
             if(news == null) {
                 return;
@@ -83,9 +83,8 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 //            Uri uri = Uri.parse(news.getImgsrc());
 //            ((ItemViewHolder) holder).mNewsImg.setImageURI(uri);
 //            ImageLoaderUtils.display(mContext, ((ItemViewHolder) holder).mNewsImg, news.getImgsrc());
-            Glide.with(mContext)
-                    .load("http://inthecheesefactory.com/uploads/source/glidepicasso/cover.jpg")
-                    .into(((ItemViewHolder) holder).mNewsImg);
+            LogUtils.d("img======"+ news.getImgsrc());
+            Glide.with(mContext).load(news.getImgsrc()).into(((ItemViewHolder) holder).mNewsImg);
         }
     }
 
