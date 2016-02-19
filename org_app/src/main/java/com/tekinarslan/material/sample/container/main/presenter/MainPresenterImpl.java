@@ -1,8 +1,8 @@
-package com.tekinarslan.material.sample.main.presenter;
+package com.tekinarslan.material.sample.container.main.presenter;
 
 
 import com.tekinarslan.material.sample.R;
-import com.tekinarslan.material.sample.main.view.MainView;
+import com.tekinarslan.material.sample.container.main.view.MainView;
 
 /**
  * Description :

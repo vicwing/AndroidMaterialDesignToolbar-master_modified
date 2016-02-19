@@ -31,5 +31,7 @@
     <string name="load_fail">加载数据失败!</string>
     <string name="close">关闭</string>
     <string name="plusone">faloating</string>
+    <string name="toolbar_title">title</string>
+    <string name="transition_news_img">transition_news</string>
 
 </resources>

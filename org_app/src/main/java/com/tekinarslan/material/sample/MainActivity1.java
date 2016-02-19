@@ -27,7 +27,7 @@ import com.tekinarslan.material.sample.uitls.NightModeHelper;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SampleActivity1 extends ActionBarActivity {
+public class MainActivity1 extends ActionBarActivity {
     private RequestQueue mRequestQueue;
     @Bind(R.id.toolbar)
     Toolbar toolbar1;
@@ -61,7 +61,7 @@ public class SampleActivity1 extends ActionBarActivity {
         NightOwl.owlBeforeCreate(this);
         super.onCreate(savedInstanceState);
         mNightModeHelper = new NightModeHelper(this, R.style.AppTheme_Light);
-        setContentView(R.layout.activity_sample);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         NightOwl.owlAfterCreate(this);
@@ -147,7 +147,7 @@ public class SampleActivity1 extends ActionBarActivity {
                         break;
                     case 5:
                         //NightOwl
-                        NightOwl.owlNewDress(SampleActivity1.this);
+                        NightOwl.owlNewDress(MainActivity1.this);
                         LogUtils.d("NightOwl......");
                         break;
                 }

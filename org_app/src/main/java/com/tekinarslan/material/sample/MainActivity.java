@@ -11,18 +11,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.apkfuns.logutils.LogUtils;
-import com.asha.nightowllib.NightOwl;
+import com.tekinarslan.material.sample.container.main.presenter.MainPresenter;
+import com.tekinarslan.material.sample.container.main.presenter.MainPresenterImpl;
+import com.tekinarslan.material.sample.container.main.view.MainView;
+import com.tekinarslan.material.sample.container.news.widget.NewsFragment;
 import com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabLayout;
 import com.tekinarslan.material.sample.fragment.SampleFragment;
-import com.tekinarslan.material.sample.main.presenter.MainPresenter;
-import com.tekinarslan.material.sample.main.presenter.MainPresenterImpl;
-import com.tekinarslan.material.sample.main.view.MainView;
-import com.tekinarslan.material.sample.news.NewsFragment;
 import com.tekinarslan.material.sample.uitls.NightModeHelper;
 import com.tekinarslan.material.sample.uitls.SnackbarUtil;
 
@@ -32,7 +29,7 @@ import butterknife.ButterKnife;
 /**
  * 全新的activity 左侧用的是NavigationView,并且有一个FloatingActionButton
  */
-public class SampleActivity extends AppCompatActivity implements MainView,View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements MainView,View.OnClickListener {
 
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
@@ -68,7 +65,7 @@ public class SampleActivity extends AppCompatActivity implements MainView,View.O
 //        NightOwl.owlBeforeCreate(this);
         super.onCreate(savedInstanceState);
 //        mNightModeHelper = new NightModeHelper(this, R.style.AppTheme_Light);
-        setContentView(R.layout.activity_sample);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 //        NightOwl.owlAfterCreate(this);
         if (mToolbar != null) {
@@ -90,72 +87,6 @@ public class SampleActivity extends AppCompatActivity implements MainView,View.O
         idFloatingactionbutton.setOnClickListener(this);
     }
 
-
-    /**
-     * 抽屉
-     */
-    private void setDrawerLayout() {
-//        drawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        String[] values = new String[]{
-                "DEFAULT", "RED", "BLUE", "MATERIAL GREY", "夜间模式", "NightOwl:夜间模式切换"
-        };
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, values);
-        mDrawerList = (ListView) findViewById(R.id.navdrawer);
-        mDrawerList.setAdapter(adapter);
-        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                switch (position) {
-                    case 0:
-                        mDrawerList.setBackgroundColor(getResources().getColor(R.color.material_deep_teal_500));
-                        mToolbar.setBackgroundColor(getResources().getColor(R.color.material_deep_teal_500));
-                        slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.material_deep_teal_500));
-                        mDrawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case 1:
-                        mDrawerList.setBackgroundColor(getResources().getColor(R.color.red));
-                        mToolbar.setBackgroundColor(getResources().getColor(R.color.red));
-                        slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.red));
-                        mDrawerLayout.closeDrawer(GravityCompat.START);
-
-                        break;
-                    case 2:
-                        mDrawerList.setBackgroundColor(getResources().getColor(R.color.blue));
-                        mToolbar.setBackgroundColor(getResources().getColor(R.color.blue));
-                        slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.blue));
-                        mDrawerLayout.closeDrawer(GravityCompat.START);
-
-                        break;
-                    case 3:
-                        mDrawerList.setBackgroundColor(getResources().getColor(R.color.material_blue_grey_800));
-                        mToolbar.setBackgroundColor(getResources().getColor(R.color.material_blue_grey_800));
-                        slidingTabLayout.setBackgroundColor(getResources().getColor(R.color.material_blue_grey_800));
-                        mDrawerLayout.closeDrawer(GravityCompat.START);
-
-                        break;
-                    case 4:
-                        mNightModeHelper.toggle();
-                        break;
-                    case 5:
-                        //NightOwl
-                        NightOwl.owlNewDress(SampleActivity.this);
-                        LogUtils.d("NightOwl......");
-                        break;
-                }
-
-            }
-        });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-//        NightOwl.owlResume(this);
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -167,8 +98,10 @@ public class SampleActivity extends AppCompatActivity implements MainView,View.O
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
+            case R.id.action_settings:
+                SettingActivity.launch(this);
+                return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -189,7 +122,6 @@ public class SampleActivity extends AppCompatActivity implements MainView,View.O
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
 
     private MainPresenter mMainPresenter;
 
@@ -241,5 +173,11 @@ public class SampleActivity extends AppCompatActivity implements MainView,View.O
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        NightOwl.owlResume(this);
     }
 }

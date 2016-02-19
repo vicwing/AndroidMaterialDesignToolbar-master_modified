@@ -1,4 +1,4 @@
-package com.tekinarslan.material.sample.main.presenter;
+package com.tekinarslan.material.sample.container.main.presenter;
 
 /**
  * Description : MainPresenter

@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "com.material.sample"
@@ -27,7 +27,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.support:cardview-v7:23.1.1'
-    //    compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.android.support:recyclerview-v7:23.1.1'
     //下拉刷新
     compile 'com.baoyz.pullrefreshlayout:library:1.0.1'
@@ -53,6 +52,7 @@ dependencies {
 //    compile 'com.squareup.okhttp3:okhttp:3.0.0-RC1'
     compile 'com.squareup.okhttp:okhttp:2.7.0'
 //    compile 'it.neokree:MaterialTabs:0.11'
+    compile 'org.sufficientlysecure:html-textview:1.3'//html解析文件
 }
 repositories {
     flatDir {

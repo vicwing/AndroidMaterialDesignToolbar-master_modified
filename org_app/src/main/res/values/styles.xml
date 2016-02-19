@@ -4,9 +4,11 @@
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <!--<item name="android:windowNoTitle">true</item>-->
-        <!--<item name="windowActionBar">false</item>-->
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!-- Toolbar 代替了 ActionBar-->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
 
@@ -45,6 +47,7 @@
 
     <!--NightOwl   windowActionBar bune-->
     <!--<style name="AppTheme.Light" parent="Theme.AppCompat.Light.DarkActionBar">-->
+
     <style name="AppTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/cus_colorPrimary</item>
@@ -67,11 +70,13 @@
         <item name="android:colorBackground">#ffacac</item>
         <item name="android:textColor">#ff0000</item>
     </style>
-    <style name="NightOwlTheme" parent="Theme.AppCompat.NoActionBar">
+
+    <style name="NightOwlTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
         <item name="night_colorPrimary">@color/colorPrimary_n</item>
         <item name="night_colorPrimaryDark">@color/colorPrimaryDark_n</item>
         <item name="night_colorAccent">@color/colorAccent_n</item>
