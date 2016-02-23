@@ -41,6 +41,7 @@
             app:elevation="6dp"
             app:pressedTranslationZ="12dp"
             app:rippleColor="@color/main_blue_dark"
+            app:layout_anchor="@id/appbar"
             />
     </android.support.design.widget.CoordinatorLayout>
     <android.support.design.widget.NavigationView
