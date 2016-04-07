@@ -5,8 +5,7 @@ import android.app.Application;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.elvishew.xlog.LogLevel;
-import com.elvishew.xlog.XLog;
+import com.orhanobut.logger.Logger;
 
 /**
  * Created by cdj on 2015/11/16.
@@ -23,7 +22,8 @@ public class MyApplication extends Application {
 //        NightOwl.owlRegisterHandler(ToolbarHandler.class, OwlCustomTable.OwlToolbar.class);
         mRequestQueue =  Volley.newRequestQueue(this);
 
-        XLog.init(LogLevel.ALL);
+//        XLog.init(LogLevel.ALL);
+        Logger.init("vic").methodCount(1).hideThreadInfo();
     }
 
     public static MyApplication getInstance() {

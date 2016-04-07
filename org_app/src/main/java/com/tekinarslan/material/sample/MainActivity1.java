@@ -20,7 +20,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.apkfuns.logutils.LogUtils;
 import com.asha.nightowllib.NightOwl;
-import com.socks.library.KLog;
 import com.tekinarslan.material.sample.customui.slidingtab_new.SlidingTabLayout;
 import com.tekinarslan.material.sample.uitls.NightModeHelper;
 
@@ -65,7 +64,7 @@ public class MainActivity1 extends ActionBarActivity {
         ButterKnife.bind(this);
 
         NightOwl.owlAfterCreate(this);
-        KLog.init(true);
+//        KLog.init(true);
 //        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);

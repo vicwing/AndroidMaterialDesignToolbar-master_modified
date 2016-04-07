@@ -11,10 +11,6 @@ import android.widget.SeekBar;
 
 import com.apkfuns.logutils.LogUtils;
 import com.bumptech.glide.Glide;
-import com.elvishew.xlog.Logger;
-import com.elvishew.xlog.XLog;
-import com.elvishew.xlog.border.BorderConfiguration;
-import com.elvishew.xlog.printer.AndroidPrinter;
 import com.google.gson.Gson;
 import com.tekinarslan.material.sample.R;
 import com.tekinarslan.material.sample.base.fragment.BaseFragment;
@@ -73,15 +69,15 @@ public class CustomViewFragment extends BaseFragment {
         }
 
 
-        Logger logger = XLog.printers(
-                new AndroidPrinter(
-                        new BorderConfiguration
-                                .Builder()
-                                .enable(true)
-                                .build()))
-                .build();
-        logger.d("The message");
-        logger.d("The message with argument: age=%s", 18);
+//        Logger logger = XLog.printers(
+//                new AndroidPrinter(
+//                        new BorderConfiguration
+//                                .Builder()
+//                                .enable(true)
+//                                .build()))
+//                .build();
+//        logger.d("The message");
+//        logger.d("The message with argument: age=%s", 18);
         String name ="cdj";
         String age ="18";
         Person person = new Person();
@@ -90,7 +86,7 @@ public class CustomViewFragment extends BaseFragment {
         Gson gson = new Gson();
         String jsonString = gson.toJson(person);
         LogUtils.d(jsonString);
-        logger.json(jsonString);
+//        logger.json(jsonString);
 //        logger.xml(xmlString);
 //        logger.method(arg1, arg2, arg3);
 //        logger.stack("Here's the call stack");

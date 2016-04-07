@@ -1,6 +1,8 @@
 package com.tekinarslan.material.sample;
 
 import android.content.res.Configuration;
+import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,9 +13,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ListView;
 
 import com.apkfuns.logutils.LogUtils;
+import com.orhanobut.logger.Logger;
 import com.tekinarslan.material.sample.container.main.presenter.MainPresenter;
 import com.tekinarslan.material.sample.container.main.presenter.MainPresenterImpl;
 import com.tekinarslan.material.sample.container.main.view.MainView;
@@ -66,6 +71,12 @@ public class MainActivity extends AppCompatActivity implements MainView,View.OnC
         super.onCreate(savedInstanceState);
 //        mNightModeHelper = new NightModeHelper(this, R.style.AppTheme_Light);
         setContentView(R.layout.activity_main);
+
+//        ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+//        View parentView = contentFrameLayout.getChildAt(0);
+
+//        getSystemStatusBarHeitht();
+        setFitsSystemWindows();
         ButterKnife.bind(this);
 //        NightOwl.owlAfterCreate(this);
         if (mToolbar != null) {
@@ -85,6 +96,45 @@ public class MainActivity extends AppCompatActivity implements MainView,View.OnC
         switch2News();
 //        setDrawerLayout();
         idFloatingactionbutton.setOnClickListener(this);
+
+//        Logger.init("YOUR_TAG")                 // default PRETTYLOGGER or use just init()
+//                .methodCount(3)                 // default 2
+//                .hideThreadInfo()               // default shown
+//                .logLevel(LogLevel.NONE)        // default LogLevel.FULL
+//                .methodOffset(2)                // default 0
+//                .logTool(new AndroidLogTool()); // custom log tool, optional
+//        Logger.d("12333333333333112");
+        Logger.init("vic").methodCount(1).hideThreadInfo();
+        Logger.d("hello111111111111");
+        LogUtils.d("hello   logutil");
+    }
+
+    private void getSystemStatusBarHeitht() {
+
+        //状态栏高度
+        Rect frame = new Rect();
+        getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        LogUtils.d("systemBarHeight  "+ statusBarHeight);
+
+        int contentHeight = getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop();
+        //statusBarHeight是上面所求的状态栏的高度
+        int titleBarHeight = contentHeight - statusBarHeight;
+        LogUtils.d("contentHeight  "+contentHeight +"  statusBarHeight "+ statusBarHeight+  " titleBarHeight "+titleBarHeight);
+//        int contentTop = getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop();
+        //statusBarHeight是上面所求的状态栏的高度
+//        int titleBarHeight = contentTop - statusBarHeight;
+
+
+
+    }
+    private void  setFitsSystemWindows(){
+        ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+        View parentView = contentFrameLayout.getChildAt(0);
+        if (parentView != null && Build.VERSION.SDK_INT >= 14) {
+            LogUtils.d("  setFitsSystemWindows(true)  "+"  parentView "+parentView.getHeight());
+            parentView.setFitsSystemWindows(true);
+        }
     }
 
     @Override

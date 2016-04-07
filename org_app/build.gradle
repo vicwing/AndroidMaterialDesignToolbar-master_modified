@@ -35,12 +35,12 @@ dependencies {
 
     compile 'com.google.android.gms:play-services-base:8.3.0'
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.6'
-    compile 'com.github.zhaokaiqiang.klog:library:0.0.1'
+//    compile 'com.github.zhaokaiqiang.klog:library:0.0.1'
     //log工具
     compile 'com.jakewharton:butterknife:7.0.1'
 
     compile 'com.google.code.gson:gson:2.4'
-    compile 'com.elvishew:xlog:0.1.1'
+//    compile 'com.elvishew:xlog:0.1.1'
 
 //    compile(name:'roundedimageview-2.2.1', ext:'aar')
     //图片加载
@@ -53,9 +53,13 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.7.0'
 //    compile 'it.neokree:MaterialTabs:0.11'
     compile 'org.sufficientlysecure:html-textview:1.3'//html解析文件
+    compile 'com.github.orhanobut:logger:1.12'
+
 }
+
 repositories {
     flatDir {
         dirs project(':nightowllib').file('libs')
     }
+    maven { url "https://jitpack.io" }
 }
