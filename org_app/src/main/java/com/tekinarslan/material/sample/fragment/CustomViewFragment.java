@@ -100,7 +100,7 @@ public class CustomViewFragment extends BaseFragment {
 //            @Override
 //            public void run() {
 //                    LogUtils.d("okhttp~~~~~~~~~~~~~~~~~~~~~~请求");
-//                    String response = OkHttpUtils.run("http://www.faxingw.cn/userimg/201208/meinv1.jpg");
+//                    String response = MyOkHttpUtils.run("http://www.faxingw.cn/userimg/201208/meinv1.jpg");
 //                    LogUtils.d("response   " + response);
 //            }
 //        }).start();
@@ -212,7 +212,7 @@ public class CustomViewFragment extends BaseFragment {
         return sdcard_path;
     }
 //
-//   static class OkHttpUtils {
+//   static class MyOkHttpUtils {
 //
 //      static OkHttpClient client = new OkHttpClient();
 //

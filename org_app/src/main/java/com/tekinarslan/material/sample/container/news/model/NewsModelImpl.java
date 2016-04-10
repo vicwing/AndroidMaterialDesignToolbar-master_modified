@@ -5,7 +5,7 @@ import com.tekinarslan.material.sample.base.Urls;
 import com.tekinarslan.material.sample.bean.NewsBean;
 import com.tekinarslan.material.sample.bean.NewsDetailBean;
 import com.tekinarslan.material.sample.container.news.widget.NewsFragment;
-import com.tekinarslan.material.sample.uitls.OkHttpUtils;
+import com.tekinarslan.material.sample.uitls.MyOkHttpUtils;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class NewsModelImpl implements com.tekinarslan.material.sample.container.
      */
     @Override
     public void loadNews(String url, final int type, final OnLoadNewsListListener listener) {
-        OkHttpUtils.ResultCallback<String> loadNewsCallback = new OkHttpUtils.ResultCallback<String>() {
+        MyOkHttpUtils.ResultCallback<String> loadNewsCallback = new MyOkHttpUtils.ResultCallback<String>() {
             @Override
             public void onSuccess(String response) {
                 List<NewsBean> newsBeanList = com.tekinarslan.material.sample.container.news.NewsJsonUtils.readJsonNewsBeans(response, getID(type));
@@ -37,7 +37,7 @@ public class NewsModelImpl implements com.tekinarslan.material.sample.container.
                 listener.onFailure("load news list failure.", e);
             }
         };
-        OkHttpUtils.get(url, loadNewsCallback);
+        MyOkHttpUtils.get(url, loadNewsCallback);
     }
 
     /**
@@ -48,7 +48,7 @@ public class NewsModelImpl implements com.tekinarslan.material.sample.container.
     @Override
     public void loadNewsDetail(final String docid, final OnLoadNewsDetailListener listener) {
         String url = getDetailUrl(docid);
-        OkHttpUtils.ResultCallback<String> loadNewsCallback = new OkHttpUtils.ResultCallback<String>() {
+        MyOkHttpUtils.ResultCallback<String> loadNewsCallback = new MyOkHttpUtils.ResultCallback<String>() {
             @Override
             public void onSuccess(String response) {
                 NewsDetailBean newsDetailBean = com.tekinarslan.material.sample.container.news.NewsJsonUtils.readJsonNewsDetailBeans(response, docid);
@@ -60,7 +60,7 @@ public class NewsModelImpl implements com.tekinarslan.material.sample.container.
                 listener.onFailure("load news detail info failure.", e);
             }
         };
-        OkHttpUtils.get(url, loadNewsCallback);
+        MyOkHttpUtils.get(url, loadNewsCallback);
     }
 
     /**

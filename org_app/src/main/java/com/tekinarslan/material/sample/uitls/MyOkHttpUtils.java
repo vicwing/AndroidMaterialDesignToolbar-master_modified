@@ -28,15 +28,15 @@ import java.util.concurrent.TimeUnit;
  * Blog   : http://www.liuling123.com
  * Date   : 15/12/17
  */
-public class OkHttpUtils {
+public class MyOkHttpUtils {
 
-    private static final String TAG = "OkHttpUtils";
+    private static final String TAG = "MyOkHttpUtils";
 
-    private static OkHttpUtils mInstance;
+    private static MyOkHttpUtils mInstance;
     private OkHttpClient mOkHttpClient;
     private Handler mDelivery;
 
-    private OkHttpUtils() {
+    private MyOkHttpUtils() {
         mOkHttpClient = new OkHttpClient();
         mOkHttpClient.setConnectTimeout(10, TimeUnit.SECONDS);
         mOkHttpClient.setWriteTimeout(10, TimeUnit.SECONDS);
@@ -46,9 +46,9 @@ public class OkHttpUtils {
         mDelivery = new Handler(Looper.getMainLooper());
     }
 
-    private synchronized static OkHttpUtils getmInstance() {
+    private synchronized static MyOkHttpUtils getmInstance() {
         if (mInstance == null) {
-            mInstance = new OkHttpUtils();
+            mInstance = new MyOkHttpUtils();
         }
         return mInstance;
     }
