@@ -1,1 +1,1 @@
-include ':org_app', ':blogcodes_demo', ':nightowllib', ':myapplication'
+include ':org_app'
